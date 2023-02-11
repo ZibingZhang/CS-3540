@@ -14,19 +14,27 @@ public class PlayerController : MonoBehaviour
 
     private bool speedBoost;
 
-    // Start is called before the first frame update
     void Start()
     {
         controller = GetComponent<CharacterController>();
     }
 
-    // Update is called once per frame
     void Update()
     {
+        // Player movement controls: WASD and arrow keys
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
+        // vectorizing directional control
         input = (transform.right * moveHorizontal + transform.forward * moveVertical).normalized;
+
+        // speedboost toggling
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            speedBoost = !speedBoost;
+
+        }
+        // adding speed to direction with speedboost
         if (speedBoost)
         {
             input *= moveSpeed*2;
@@ -36,12 +44,7 @@ public class PlayerController : MonoBehaviour
             input *= moveSpeed;
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            speedBoost = !speedBoost;
-
-        }
-
+        // validating jumps
         if (controller.isGrounded)
         {
             moveDirection = input;
@@ -56,10 +59,12 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            // controlling mid-air movement
             input.y = moveDirection.y;
             moveDirection = Vector3.Lerp(moveDirection, input, Time.deltaTime * airControl);
         }
 
+        // apply gravity to direction, move player
         moveDirection.y -= gravity * Time.deltaTime;
         controller.Move(input * Time.deltaTime);
     }
