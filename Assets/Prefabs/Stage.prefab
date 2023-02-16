@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 1308577119547130465}
   - component: {fileID: 1308577119547130466}
   m_Layer: 0
-  m_Name: StageBorderLong
-  m_TagString: Untagged
+  m_Name: StageBorderSouth
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,8 +128,8 @@ GameObject:
   - component: {fileID: 1308577119710375119}
   - component: {fileID: 1308577119710375112}
   m_Layer: 0
-  m_Name: StageBorderShort
-  m_TagString: Untagged
+  m_Name: StageBorderEast
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 1308577120180686432}
   m_Layer: 0
   m_Name: Stage
-  m_TagString: Untagged
+  m_TagString: Stage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -360,8 +360,8 @@ GameObject:
   - component: {fileID: 1308577120715968256}
   - component: {fileID: 1308577120715968257}
   m_Layer: 0
-  m_Name: StageBorderLong (1)
-  m_TagString: Untagged
+  m_Name: StageBorderNorth
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -474,8 +474,8 @@ GameObject:
   - component: {fileID: 1308577121510157410}
   - component: {fileID: 1308577121510157411}
   m_Layer: 0
-  m_Name: StageBorderShort (1)
-  m_TagString: Untagged
+  m_Name: StageBorderWest
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

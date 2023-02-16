@@ -21,7 +21,7 @@ public class ThrowProjectile : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             GameObject projectile = Instantiate(projectilePrefab,
-                transform.position + transform.forward, transform.rotation);
+                transform.position + transform.forward, transform.rotation) ;
             Rigidbody rigidBody = projectile.GetComponent<Rigidbody>();
             rigidBody.AddForce(transform.forward * projectileSpeed, ForceMode.VelocityChange);
             projectile.transform.SetParent(projectileParent);

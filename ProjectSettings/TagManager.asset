@@ -9,6 +9,7 @@ TagManager:
   - Puddle
   - Projectile
   - ProjectileParent
+  - Boundary
   layers:
   - Default
   - TransparentFX
