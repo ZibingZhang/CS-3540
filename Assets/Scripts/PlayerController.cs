@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 7;
-    public float jumpHeight = 3;
-    public float gravity = 9.81f;
-    public float airControl = 2f;
+    [SerializeField] private float moveSpeed = 7;
+    [SerializeField] private float jumpHeight = 3;
+    [SerializeField] private float gravity = 9.81f;
+    [SerializeField] private float airControl = 2f;
 
-    CharacterController controller;
-    Vector3 input, moveDirection;
+    private CharacterController controller;
+    private Vector3 input;
+    private Vector3 moveDirection;
 
     private bool speedBoost;
 
