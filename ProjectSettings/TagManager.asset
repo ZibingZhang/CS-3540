@@ -10,6 +10,7 @@ TagManager:
   - Projectile
   - ProjectileParent
   - Boundary
+  - Stage
   layers:
   - Default
   - TransparentFX
