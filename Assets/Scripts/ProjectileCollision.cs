@@ -7,13 +7,13 @@ public class ProjectileCollision : MonoBehaviour
     public int damage = 20;
 
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag.Contains("Projectile"))
+        if (other.gameObject.tag.Contains("Projectile"))
         {
             var health = gameObject.GetComponent<Health>();
             health.TakeDamage(damage);
-            //Destroy(gameObject);
+            Destroy(other.gameObject);
         }
     }
 }
