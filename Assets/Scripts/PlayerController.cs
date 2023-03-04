@@ -87,4 +87,9 @@ public class PlayerController : MonoBehaviour
     private void ResetLocationBool() {
         resetLocation = false;
     }
+
+    public void PlayAudioClip(AudioClip clip) {
+        AudioSource.PlayClipAtPoint(clip, transform.position, 1);
+        AudioSource.PlayClipAtPoint(clip, startingPosition, 1);
+    }
 }

@@ -208,6 +208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad542dfc31add454890b9090b21c90f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerSFX: {fileID: 8300000, guid: b625f1450cd9c4ce2b81dd1e897fc0a4, type: 3}
   projectilePrefab: {fileID: 4033555839509222781, guid: 1017e22a3a33c4cf282ffa08b2a748bf, type: 3}
   projectileSpeed: 100
 --- !u!1 &4128198336212290295
@@ -363,3 +364,5 @@ MonoBehaviour:
   startingHealth: 100
   healthSlider: {fileID: 0}
   healthText: {fileID: 0}
+  hurtSFX: {fileID: 8300000, guid: 2d4ff87de012f40efb1e64c4f8196f69, type: 3}
+  dieSFX: {fileID: 8300000, guid: 27db08b8818004194b7623ef2c365991, type: 3}

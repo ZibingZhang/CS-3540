@@ -10,6 +10,8 @@ public class Health : MonoBehaviour
     int currentHealth;
     public Slider healthSlider;
     public Text healthText;
+    public AudioClip hurtSFX;
+    public AudioClip dieSFX;
 
     // Start is called before the first frame update
     void Start()
@@ -36,13 +38,26 @@ public class Health : MonoBehaviour
         if (currentHealth <= 0)
         {
             Dies();
+        } 
+        else 
+        {
+            if (gameObject.tag == "Player") {
+                var controller = gameObject.GetComponent<PlayerController>();
+                controller.PlayAudioClip(hurtSFX);
+            }
         }
     }
 
     void Dies()
     {
-        Debug.Log(name + " dies");
-        Destroy(gameObject);
+        if (gameObject.tag == "Player") {
+            var controller = gameObject.GetComponent<PlayerController>();
+            controller.PlayAudioClip(dieSFX);
+        }
+        else { 
+            Debug.Log(name + " dies");
+            Destroy(gameObject);
+        }
     }
 
 }

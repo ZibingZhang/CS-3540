@@ -21,12 +21,11 @@ public class FallenPlayerDetection : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player") {
-            Debug.Log("trigger entered");
-            var health = other.gameObject.GetComponent<Health>();
-            health.TakeDamage(damageAmount);
-
             var controller = other.gameObject.GetComponent<PlayerController>();
             controller.resetLocation = true;
+            
+            var health = other.gameObject.GetComponent<Health>();
+            health.TakeDamage(damageAmount);
         }
 
     }

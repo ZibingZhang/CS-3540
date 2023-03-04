@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ThrowProjectile : MonoBehaviour
 {
+    public AudioClip playerSFX;
     
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private float projectileSpeed;
@@ -20,6 +21,7 @@ public class ThrowProjectile : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
+            AudioSource.PlayClipAtPoint(playerSFX, transform.position, 1);
             GameObject projectile = Instantiate(projectilePrefab,
                 transform.position + transform.forward, transform.rotation) ;
             Rigidbody rigidBody = projectile.GetComponent<Rigidbody>();
