@@ -12,6 +12,7 @@ TagManager:
   - Boundary
   - Stage
   - Enemy
+  - OffStage
   layers:
   - Default
   - TransparentFX

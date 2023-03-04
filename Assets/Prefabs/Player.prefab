@@ -329,6 +329,7 @@ MonoBehaviour:
   jumpHeight: 3
   gravity: 9.81
   airControl: 3
+  resetLocation: 0
 --- !u!143 &4128198336212290253
 CharacterController:
   m_ObjectHideFlags: 0
