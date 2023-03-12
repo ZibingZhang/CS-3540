@@ -21,7 +21,6 @@ public class PlayerController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         startingPosition = gameObject.transform.TransformPoint(Vector3.zero);
-        Debug.Log(startingPosition);
     }
 
     void Update()
