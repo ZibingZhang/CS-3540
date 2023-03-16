@@ -39,7 +39,8 @@ public class Health : MonoBehaviour
         } 
         else 
         {
-            if (gameObject.tag == "Player") {
+            if (gameObject.tag == "Player")
+            {
                 var controller = gameObject.GetComponent<PlayerController>();
                 controller.PlayAudioClip(hurtSFX);
             }
@@ -48,11 +49,14 @@ public class Health : MonoBehaviour
 
     void Dies()
     {
-        if (gameObject.tag == "Player") {
+        if (gameObject.tag == "Player")
+        {
             var controller = gameObject.GetComponent<PlayerController>();
             controller.PlayAudioClip(dieSFX);
+            levelManager.LevelLost();
         }
-        else {
+        else
+        {
             Debug.Log(name + " dies");
             Destroy(gameObject);
 

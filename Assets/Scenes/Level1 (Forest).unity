@@ -2241,6 +2241,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 7116144856787077164, guid: f018e03fb69094eed9de039f1af23ad8, type: 3}
+      propertyPath: frequency
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7116144856787077164, guid: f018e03fb69094eed9de039f1af23ad8, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 5935773751647758078, guid: 2ce878dcfca244ed59db5b74f30f1eda, type: 3}
     - target: {fileID: 7453772005209135401, guid: f018e03fb69094eed9de039f1af23ad8, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -6327,6 +6335,10 @@ PrefabInstance:
     - target: {fileID: 4128198336212290295, guid: 3718a43bce5cc1942a31eb5f5f959c18, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8650706857184053722, guid: 3718a43bce5cc1942a31eb5f5f959c18, type: 3}
+      propertyPath: damage
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3718a43bce5cc1942a31eb5f5f959c18, type: 3}
