@@ -7,28 +7,26 @@ public class Health : MonoBehaviour
 {
 
     public int startingHealth = 100;
-    int currentHealth;
     public Slider healthSlider;
     public Text healthText;
     public AudioClip hurtSFX;
     public AudioClip dieSFX;
 
-    // Start is called before the first frame update
+    private int currentHealth;
+    private LevelManager levelManager;
+
     void Start()
     {
         currentHealth = startingHealth;
         healthSlider.value = currentHealth;
         healthText.text = currentHealth + " / " + startingHealth;
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-
+        levelManager = FindObjectOfType<LevelManager>();
     }
 
     public void TakeDamage(int damageAmount)
     {
+        Debug.Log(name + " taken damage " + damageAmount);
         if (currentHealth > 0)
         {
             currentHealth -= damageAmount;
@@ -54,9 +52,14 @@ public class Health : MonoBehaviour
             var controller = gameObject.GetComponent<PlayerController>();
             controller.PlayAudioClip(dieSFX);
         }
-        else { 
+        else {
             Debug.Log(name + " dies");
             Destroy(gameObject);
+
+            if (gameObject.tag == "Enemy")
+            {
+                levelManager.EnemyDied();
+            }
         }
     }
 
