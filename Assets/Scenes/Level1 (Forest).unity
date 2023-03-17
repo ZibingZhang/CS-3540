@@ -2243,7 +2243,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1367500408231364990, guid: f018e03fb69094eed9de039f1af23ad8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7116144856787077164, guid: f018e03fb69094eed9de039f1af23ad8, type: 3}
       propertyPath: frequency
