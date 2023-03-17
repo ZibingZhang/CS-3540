@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.3822313, g: 0.46889317, b: 0.613982, a: 1}
+  m_IndirectSpecularColor: {r: 0.38148043, g: 0.46817917, b: 0.6131963, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2240,6 +2240,10 @@ PrefabInstance:
     - target: {fileID: 1367500408231364990, guid: f018e03fb69094eed9de039f1af23ad8, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1367500408231364990, guid: f018e03fb69094eed9de039f1af23ad8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7116144856787077164, guid: f018e03fb69094eed9de039f1af23ad8, type: 3}
       propertyPath: frequency
@@ -6265,11 +6269,27 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 281227404729275298, guid: 3718a43bce5cc1942a31eb5f5f959c18, type: 3}
+      propertyPath: airSpecialPrefab
+      value: 
+      objectReference: {fileID: 5935773751647758078, guid: 3d50552641e404eee9ad01f273a74e64, type: 3}
+    - target: {fileID: 281227404729275298, guid: 3718a43bce5cc1942a31eb5f5f959c18, type: 3}
+      propertyPath: fireSpecialPrefab
+      value: 
+      objectReference: {fileID: 5935773751647758078, guid: 4dbafa610351e42b78143a34ba6c04f8, type: 3}
+    - target: {fileID: 281227404729275298, guid: 3718a43bce5cc1942a31eb5f5f959c18, type: 3}
       propertyPath: earthSpecialPrefab
       value: 
-      objectReference: {fileID: 5935773751647758078, guid: 2ce878dcfca244ed59db5b74f30f1eda, type: 3}
+      objectReference: {fileID: 5935773751647758078, guid: d560a8eb8d8984e6e99cbd3d770689ac, type: 3}
     - target: {fileID: 281227404729275298, guid: 3718a43bce5cc1942a31eb5f5f959c18, type: 3}
       propertyPath: waterSpecialPrefab
+      value: 
+      objectReference: {fileID: 5935773751647758078, guid: 90e0664fb0ec74309a30e42b1ebe23b1, type: 3}
+    - target: {fileID: 281227404729275298, guid: 3718a43bce5cc1942a31eb5f5f959c18, type: 3}
+      propertyPath: airProjectilePrefab
+      value: 
+      objectReference: {fileID: 5935773751647758078, guid: 8b7baedf7f84d45be83aefbd5695a185, type: 3}
+    - target: {fileID: 281227404729275298, guid: 3718a43bce5cc1942a31eb5f5f959c18, type: 3}
+      propertyPath: fireProjectilePrefab
       value: 
       objectReference: {fileID: 5935773751647758078, guid: e4bfef298c4fd445ea659d64f08f54e9, type: 3}
     - target: {fileID: 281227404729275298, guid: 3718a43bce5cc1942a31eb5f5f959c18, type: 3}
@@ -6338,7 +6358,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8650706857184053722, guid: 3718a43bce5cc1942a31eb5f5f959c18, type: 3}
       propertyPath: damage
-      value: 100
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3718a43bce5cc1942a31eb5f5f959c18, type: 3}

@@ -7,17 +7,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3280909829089286821, guid: 1017e22a3a33c4cf282ffa08b2a748bf, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3949042018646031831, guid: 1017e22a3a33c4cf282ffa08b2a748bf, type: 3}
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4033555839509222781, guid: 1017e22a3a33c4cf282ffa08b2a748bf, type: 3}
       propertyPath: m_Name
-      value: EarthProjectile
+      value: WaterSpecial
       objectReference: {fileID: 0}
     - target: {fileID: 4739092884773165748, guid: 1017e22a3a33c4cf282ffa08b2a748bf, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739092884773165748, guid: 1017e22a3a33c4cf282ffa08b2a748bf, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739092884773165748, guid: 1017e22a3a33c4cf282ffa08b2a748bf, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739092884773165748, guid: 1017e22a3a33c4cf282ffa08b2a748bf, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4739092884773165748, guid: 1017e22a3a33c4cf282ffa08b2a748bf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -62,7 +78,7 @@ PrefabInstance:
     - target: {fileID: 5782146314058274361, guid: 1017e22a3a33c4cf282ffa08b2a748bf, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 7ca6b60a6914440f1801f8497ebc5bb5, type: 2}
+      objectReference: {fileID: 2100000, guid: 4f7ff7d178336409b899be1da1319710, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1017e22a3a33c4cf282ffa08b2a748bf, type: 3}
 --- !u!1 &5935773751647758078 stripped
@@ -70,7 +86,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4033555839509222781, guid: 1017e22a3a33c4cf282ffa08b2a748bf, type: 3}
   m_PrefabInstance: {fileID: 7321176709131875203}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3102378115871423780
+--- !u!114 &538182125242766541
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

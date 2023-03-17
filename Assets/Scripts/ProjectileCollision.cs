@@ -9,9 +9,11 @@ public class ProjectileCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag.Contains("Projectile"))
+        GameObject otherObject = other.gameObject;
+        if (otherObject.tag.Contains("Projectile"))
         {
             Debug.Log(name + " collided with projectile");
+            damage = otherObject.GetComponent<ProjectileBehavior>().damageAmount;
             var health = gameObject.GetComponent<Health>();
             health.TakeDamage(damage);
             Destroy(other.gameObject);

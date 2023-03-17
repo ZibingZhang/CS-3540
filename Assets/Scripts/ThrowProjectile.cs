@@ -11,6 +11,10 @@ public class ThrowProjectile : MonoBehaviour
     [SerializeField] private GameObject waterSpecialPrefab;
     [SerializeField] private GameObject earthProjectilePrefab;
     [SerializeField] private GameObject earthSpecialPrefab;
+    [SerializeField] private GameObject fireProjectilePrefab;
+    [SerializeField] private GameObject fireSpecialPrefab;
+    [SerializeField] private GameObject airProjectilePrefab;
+    [SerializeField] private GameObject airSpecialPrefab;
     [SerializeField] private float projectileSpeed = 100;
     [SerializeField] private float specialSpeed = 100;
 
@@ -32,6 +36,14 @@ public class ThrowProjectile : MonoBehaviour
         if (earthProjectilePrefab != null && earthSpecialPrefab != null) {
             projectiles.Add(earthProjectilePrefab);
             specials.Add(earthSpecialPrefab);
+        }
+        if (fireProjectilePrefab != null && fireSpecialPrefab != null) {
+            projectiles.Add(fireProjectilePrefab);
+            specials.Add(fireSpecialPrefab);
+        }
+        if (airProjectilePrefab != null && airSpecialPrefab != null) {
+            projectiles.Add(airProjectilePrefab);
+            specials.Add(airSpecialPrefab);
         }
 
         currentProjectile = projectiles[currentElement];

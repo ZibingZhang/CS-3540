@@ -13,11 +13,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4033555839509222781, guid: 1017e22a3a33c4cf282ffa08b2a748bf, type: 3}
       propertyPath: m_Name
-      value: EarthProjectile
+      value: EarthSpecial
       objectReference: {fileID: 0}
     - target: {fileID: 4739092884773165748, guid: 1017e22a3a33c4cf282ffa08b2a748bf, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739092884773165748, guid: 1017e22a3a33c4cf282ffa08b2a748bf, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739092884773165748, guid: 1017e22a3a33c4cf282ffa08b2a748bf, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4739092884773165748, guid: 1017e22a3a33c4cf282ffa08b2a748bf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -82,4 +90,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dd0d96b5064641829e73fe670bd0256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 20
+  damageAmount: 40

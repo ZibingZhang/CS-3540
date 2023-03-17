@@ -13,11 +13,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4033555839509222781, guid: 1017e22a3a33c4cf282ffa08b2a748bf, type: 3}
       propertyPath: m_Name
-      value: EarthProjectile
+      value: FireSpecial
       objectReference: {fileID: 0}
     - target: {fileID: 4739092884773165748, guid: 1017e22a3a33c4cf282ffa08b2a748bf, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739092884773165748, guid: 1017e22a3a33c4cf282ffa08b2a748bf, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4739092884773165748, guid: 1017e22a3a33c4cf282ffa08b2a748bf, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4739092884773165748, guid: 1017e22a3a33c4cf282ffa08b2a748bf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -62,7 +70,7 @@ PrefabInstance:
     - target: {fileID: 5782146314058274361, guid: 1017e22a3a33c4cf282ffa08b2a748bf, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 7ca6b60a6914440f1801f8497ebc5bb5, type: 2}
+      objectReference: {fileID: 2100000, guid: 20818d7780c2c44d3b65a541f78573ac, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1017e22a3a33c4cf282ffa08b2a748bf, type: 3}
 --- !u!1 &5935773751647758078 stripped
@@ -70,7 +78,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4033555839509222781, guid: 1017e22a3a33c4cf282ffa08b2a748bf, type: 3}
   m_PrefabInstance: {fileID: 7321176709131875203}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3102378115871423780
+--- !u!114 &3796620701474382934
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -82,4 +90,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dd0d96b5064641829e73fe670bd0256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 20
+  damageAmount: 30
