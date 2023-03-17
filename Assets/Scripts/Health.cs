@@ -67,4 +67,14 @@ public class Health : MonoBehaviour
         }
     }
 
+    public void GainHealth(int amount)
+    {
+        if (currentHealth < 100)
+        {
+            currentHealth += amount;
+            healthSlider.value = Mathf.Clamp(currentHealth, 0, 100);
+            healthText.text = currentHealth + " / " + startingHealth;
+        }
+    }
+
 }
