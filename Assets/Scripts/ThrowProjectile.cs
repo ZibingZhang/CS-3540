@@ -4,8 +4,21 @@ using UnityEngine;
 
 public class ThrowProjectile : MonoBehaviour
 {
-    public AudioClip playerSFX;
-    public int currentElement = 0;
+
+    public enum Element
+    {
+        Water,
+        Earth,
+        Fire,
+        Air
+    }
+    public Element currentElement;
+
+    public AudioClip waterSFX;
+    public AudioClip earthSFX;
+    public AudioClip fireSFX;
+    public AudioClip airSFX;
+    //public int currentElement = 0;
     
     [SerializeField] private GameObject waterProjectilePrefab;
     [SerializeField] private GameObject waterSpecialPrefab;
@@ -19,17 +32,17 @@ public class ThrowProjectile : MonoBehaviour
     [SerializeField] private float specialSpeed = 100;
 
     private Transform projectileParent;
-    private List<GameObject> projectiles = new List<GameObject>();
-    private List<GameObject> specials = new List<GameObject>();
+
     private GameObject currentProjectile;
     private GameObject currentSpecial;
+    private AudioClip currentAudio;
 
     // Start is called before the first frame update
     void Start()
     {
         projectileParent = GameObject.FindGameObjectWithTag("ProjectileParent").transform;
 
-        if (waterProjectilePrefab != null && waterSpecialPrefab != null) {
+  /*      if (waterProjectilePrefab != null && waterSpecialPrefab != null) {
             projectiles.Add(waterProjectilePrefab);
             specials.Add(waterSpecialPrefab);
         }
@@ -44,13 +57,12 @@ public class ThrowProjectile : MonoBehaviour
         if (airProjectilePrefab != null && airSpecialPrefab != null) {
             projectiles.Add(airProjectilePrefab);
             specials.Add(airSpecialPrefab);
-        }
+        }*/
 
-        currentProjectile = projectiles[currentElement];
-        currentSpecial = specials[currentElement];
+        SetElementObjects(currentElement);
 
-        Debug.Log(projectiles.Count);
-        Debug.Log(specials.Count);
+        //Debug.Log(projectiles.Count);
+        //Debug.Log(specials.Count);
         
     }
 
@@ -64,27 +76,69 @@ public class ThrowProjectile : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            AudioSource.PlayClipAtPoint(playerSFX, transform.position, 1);
-            GameObject projectile = Instantiate(currentProjectile,
-                transform.position + transform.forward, transform.rotation) ;
-            Rigidbody rigidBody = projectile.GetComponent<Rigidbody>();
-            rigidBody.AddForce(transform.forward * projectileSpeed, ForceMode.VelocityChange);
-            projectile.transform.SetParent(projectileParent);
+            FireProjectile(currentProjectile, projectileSpeed);
         } else if (Input.GetButtonDown("Fire2"))
         {
-            AudioSource.PlayClipAtPoint(playerSFX, transform.position, 1);
-            GameObject projectile = Instantiate(currentSpecial,
-                transform.position + transform.forward, transform.rotation) ;
-            Rigidbody rigidBody = projectile.GetComponent<Rigidbody>();
-            rigidBody.AddForce(transform.forward * specialSpeed, ForceMode.VelocityChange);
-            projectile.transform.SetParent(projectileParent);
+            FireProjectile(currentSpecial, specialSpeed);
         }
     }
+    void SetElementObjects(Element element)
+    {
+        currentElement = element;
+        switch (element)
+        {
+            case Element.Water:
+                currentAudio = waterSFX;
+                currentProjectile = waterProjectilePrefab;
+                currentSpecial = waterSpecialPrefab;
+                break;
+            case Element.Air:
+                currentAudio = airSFX;
+                currentProjectile = airProjectilePrefab;
+                currentSpecial = airSpecialPrefab;
+                break;
+            case Element.Fire:
+                currentAudio = fireSFX;
+                currentProjectile = fireProjectilePrefab;
+                currentSpecial = fireSpecialPrefab;
+                break;
+            case Element.Earth:
+                currentAudio = earthSFX;
+                currentProjectile = earthProjectilePrefab;
+                currentSpecial = earthSpecialPrefab;
+                break;
 
-    private void SwitchElement() {
-        currentElement = (currentElement + 1) % projectiles.Count;
+        }
+    }
+    void FireProjectile(GameObject prefab, float speed)
+    {
+        AudioSource.PlayClipAtPoint(currentAudio, transform.position, 1);
+        GameObject projectile = Instantiate(prefab,
+            transform.position + transform.forward, transform.rotation);
+        Rigidbody rigidBody = projectile.GetComponent<Rigidbody>();
+        rigidBody.AddForce(transform.forward * speed, ForceMode.VelocityChange);
+        //projectile.transform.SetParent(projectileParent);
+        projectile.transform.parent = GameObject.FindGameObjectWithTag("ProjectileParent").transform;
 
-        currentProjectile = projectiles[currentElement];
-        currentSpecial = specials[currentElement];
+    }
+
+    private void SwitchElement()
+    {
+        if (currentElement == Element.Water)
+        {
+            SetElementObjects(Element.Earth);
+        }
+        else if (currentElement == Element.Earth)
+        {
+            SetElementObjects(Element.Fire);
+        }
+        else if (currentElement == Element.Fire)
+        {
+            SetElementObjects(Element.Air);
+        }
+        else if (currentElement == Element.Air)
+        {
+            SetElementObjects(Element.Water);
+        }
     }
 }

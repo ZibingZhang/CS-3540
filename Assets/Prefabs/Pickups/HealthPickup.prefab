@@ -110,6 +110,7 @@ GameObject:
   - component: {fileID: 4315146744382951367}
   - component: {fileID: 2707468493331023425}
   - component: {fileID: 6557156611217030173}
+  - component: {fileID: 391264345}
   m_Layer: 0
   m_Name: HealthPickup
   m_TagString: Untagged
@@ -146,7 +147,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a329f323f842ad47b0ad85f39d7146a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 20
+  addedHealth: 10
+  degreesPerSecond: 15
+  amplitude: 0.5
+  frequency: 1
+  audioPickup: {fileID: 8300000, guid: 8b3da4299c99eaf4dbb183fde7d0e4e4, type: 3}
 --- !u!114 &4315146744382951367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,6 +190,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.2, y: 0.55, z: 0.55}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &391264345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3907341287271885688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d01b1013696932947bfbc62246d1292d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  degreesPerSecond: 30
+  amplitude: 0.1
+  frequency: 1
 --- !u!1 &8945133135465584709
 GameObject:
   m_ObjectHideFlags: 0

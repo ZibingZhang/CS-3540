@@ -12,7 +12,7 @@ public class ProjectileCollision : MonoBehaviour
         GameObject otherObject = other.gameObject;
         if (otherObject.tag.Contains("Projectile"))
         {
-            Debug.Log(name + " collided with projectile");
+            //Debug.Log(name + " collided with projectile");
             damage = otherObject.GetComponent<ProjectileBehavior>().damageAmount;
             var health = gameObject.GetComponent<Health>();
             health.TakeDamage(damage);

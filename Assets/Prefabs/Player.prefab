@@ -208,12 +208,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad542dfc31add454890b9090b21c90f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSFX: {fileID: 8300000, guid: b625f1450cd9c4ce2b81dd1e897fc0a4, type: 3}
   currentElement: 0
-  waterProjectilePrefab: {fileID: 0}
-  waterSpecialPrefab: {fileID: 0}
-  earthProjectilePrefab: {fileID: 0}
-  earthSpecialPrefab: {fileID: 0}
+  waterSFX: {fileID: 8300000, guid: 2d276ec6a952b43c7bae481497f1ea9a, type: 3}
+  earthSFX: {fileID: 8300000, guid: 4e48c26877fbb43c487059e86e8aede8, type: 3}
+  fireSFX: {fileID: 8300000, guid: cf8c9a652782e4b1289ae348b6944532, type: 3}
+  airSFX: {fileID: 8300000, guid: 30c10444a1d994978b1ff3518881d1b0, type: 3}
+  waterProjectilePrefab: {fileID: 1228652472414832, guid: 2920ebe7e4dba5242a404fa0fa7ab0ea, type: 3}
+  waterSpecialPrefab: {fileID: 1018882707796302, guid: f013a7465c9b4274bbd66d2ff9761187, type: 3}
+  earthProjectilePrefab: {fileID: 1253354654402752, guid: 4f2c211b3d32c5f4fa7eb7687e824ca7, type: 3}
+  earthSpecialPrefab: {fileID: 1253354654402752, guid: d3ffc43c2466bd441a88c3ecd7571090, type: 3}
+  fireProjectilePrefab: {fileID: 1449260960837898, guid: ea471fb16b008d44886490483edd9cee, type: 3}
+  fireSpecialPrefab: {fileID: 1033026374199576, guid: 5c16c201ada1f4a43965ab102abb63a9, type: 3}
+  airProjectilePrefab: {fileID: 1519322442116508, guid: fa331b8213914f44cab65156c1ba366e, type: 3}
+  airSpecialPrefab: {fileID: 1762457832057232, guid: b243715daaaf5734aa6c9a6b66f975ca, type: 3}
   projectileSpeed: 100
   specialSpeed: 100
 --- !u!1 &4128198336212290295
@@ -333,7 +340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
-  jumpHeight: 3
+  jumpHeight: 5
   gravity: 9.81
   airControl: 3
   resetLocation: 0
