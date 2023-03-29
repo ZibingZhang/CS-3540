@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.13036436, g: 0.0948469, b: 0.12510028, a: 1}
+  m_IndirectSpecularColor: {r: 0.1301046, g: 0.09556649, b: 0.12508947, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -200,12 +200,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 85802960}
-  - component: {fileID: 85802959}
-  - component: {fileID: 85802958}
   - component: {fileID: 85802957}
   - component: {fileID: 85802956}
   - component: {fileID: 85802955}
   - component: {fileID: 85802961}
+  - component: {fileID: 85802962}
   m_Layer: 0
   m_Name: PolyShape (2)
   m_TagString: Lava
@@ -277,30 +276,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &85802958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 85802954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb977b126bc1b4f15813dcf9da9bb600, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &85802959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 85802954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8233d90336aea43098adf6dbabd606a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &85802960
 Transform:
   m_ObjectHideFlags: 0
@@ -332,6 +307,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &85802962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 85802954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00c7dd5467e6e41c6b7a03bd18aee55a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  damageRate: 1
+  damageSFX: {fileID: 8300000, guid: bc0e209e264804d339674e812ae8d433, type: 3}
 --- !u!1001 &138204245
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1103,6 +1093,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4128198336212290253, guid: 3718a43bce5cc1942a31eb5f5f959c18, type: 3}
+      propertyPath: m_Height
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4128198336212290295, guid: 3718a43bce5cc1942a31eb5f5f959c18, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1546,12 +1540,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 430130034}
-  - component: {fileID: 430130033}
-  - component: {fileID: 430130032}
   - component: {fileID: 430130031}
   - component: {fileID: 430130030}
   - component: {fileID: 430130029}
   - component: {fileID: 430130035}
+  - component: {fileID: 430130036}
   m_Layer: 0
   m_Name: PolyShape (1)
   m_TagString: Lava
@@ -1623,30 +1616,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &430130032
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 430130028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb977b126bc1b4f15813dcf9da9bb600, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &430130033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 430130028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8233d90336aea43098adf6dbabd606a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &430130034
 Transform:
   m_ObjectHideFlags: 0
@@ -1678,6 +1647,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &430130036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430130028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00c7dd5467e6e41c6b7a03bd18aee55a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  damageRate: 1
+  damageSFX: {fileID: 8300000, guid: bc0e209e264804d339674e812ae8d433, type: 3}
 --- !u!1 &452539861
 GameObject:
   m_ObjectHideFlags: 0
@@ -2046,12 +2030,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 748651764}
-  - component: {fileID: 748651763}
-  - component: {fileID: 748651762}
   - component: {fileID: 748651761}
   - component: {fileID: 748651760}
   - component: {fileID: 748651759}
   - component: {fileID: 748651765}
+  - component: {fileID: 748651766}
   m_Layer: 0
   m_Name: PolyShape (3)
   m_TagString: Lava
@@ -2123,30 +2106,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &748651762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 748651758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb977b126bc1b4f15813dcf9da9bb600, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &748651763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 748651758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8233d90336aea43098adf6dbabd606a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &748651764
 Transform:
   m_ObjectHideFlags: 0
@@ -2178,6 +2137,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &748651766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748651758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00c7dd5467e6e41c6b7a03bd18aee55a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  damageRate: 1
+  damageSFX: {fileID: 8300000, guid: bc0e209e264804d339674e812ae8d433, type: 3}
 --- !u!1001 &802259352
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2200,6 +2174,10 @@ PrefabInstance:
     - target: {fileID: 6186935853910114423, guid: f313cc19f0bf3e040826754aa996a547, type: 3}
       propertyPath: m_Name
       value: Ninja Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6186935853910114423, guid: f313cc19f0bf3e040826754aa996a547, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6816120853428738765, guid: f313cc19f0bf3e040826754aa996a547, type: 3}
       propertyPath: m_RootOrder
@@ -2256,12 +2234,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 827885172}
-  - component: {fileID: 827885178}
-  - component: {fileID: 827885177}
   - component: {fileID: 827885176}
   - component: {fileID: 827885175}
   - component: {fileID: 827885174}
   - component: {fileID: 827885173}
+  - component: {fileID: 827885177}
   m_Layer: 0
   m_Name: PolyShape (2)
   m_TagString: Lava
@@ -2373,21 +2350,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 827885171}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb977b126bc1b4f15813dcf9da9bb600, type: 3}
+  m_Script: {fileID: 11500000, guid: 00c7dd5467e6e41c6b7a03bd18aee55a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &827885178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 827885171}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8233d90336aea43098adf6dbabd606a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  damage: 1
+  damageRate: 1
+  damageSFX: {fileID: 8300000, guid: bc0e209e264804d339674e812ae8d433, type: 3}
 --- !u!1001 &868144530
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2793,12 +2761,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 992609059}
-  - component: {fileID: 992609065}
-  - component: {fileID: 992609064}
   - component: {fileID: 992609063}
   - component: {fileID: 992609062}
   - component: {fileID: 992609061}
   - component: {fileID: 992609060}
+  - component: {fileID: 992609064}
   m_Layer: 0
   m_Name: PolyShape (3)
   m_TagString: Lava
@@ -2910,21 +2877,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 992609058}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb977b126bc1b4f15813dcf9da9bb600, type: 3}
+  m_Script: {fileID: 11500000, guid: 00c7dd5467e6e41c6b7a03bd18aee55a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &992609065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 992609058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8233d90336aea43098adf6dbabd606a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  damage: 1
+  damageRate: 1
+  damageSFX: {fileID: 8300000, guid: bc0e209e264804d339674e812ae8d433, type: 3}
 --- !u!1 &1157089229
 GameObject:
   m_ObjectHideFlags: 0
@@ -4308,12 +4266,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1628612485}
-  - component: {fileID: 1628612484}
-  - component: {fileID: 1628612483}
   - component: {fileID: 1628612482}
   - component: {fileID: 1628612481}
   - component: {fileID: 1628612480}
   - component: {fileID: 1628612486}
+  - component: {fileID: 1628612487}
   m_Layer: 0
   m_Name: PolyShape
   m_TagString: Lava
@@ -4385,30 +4342,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1628612483
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1628612479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb977b126bc1b4f15813dcf9da9bb600, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1628612484
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1628612479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8233d90336aea43098adf6dbabd606a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1628612485
 Transform:
   m_ObjectHideFlags: 0
@@ -4440,6 +4373,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1628612487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628612479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00c7dd5467e6e41c6b7a03bd18aee55a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  damageRate: 1
+  damageSFX: {fileID: 8300000, guid: bc0e209e264804d339674e812ae8d433, type: 3}
 --- !u!850595691 &1632161492
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -4953,12 +4901,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1707901037}
-  - component: {fileID: 1707901043}
-  - component: {fileID: 1707901042}
   - component: {fileID: 1707901041}
   - component: {fileID: 1707901040}
   - component: {fileID: 1707901039}
   - component: {fileID: 1707901038}
+  - component: {fileID: 1707901044}
   m_Layer: 0
   m_Name: PolyShape
   m_TagString: Lava
@@ -5061,7 +5008,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1707901042
+--- !u!114 &1707901044
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5070,21 +5017,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1707901036}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb977b126bc1b4f15813dcf9da9bb600, type: 3}
+  m_Script: {fileID: 11500000, guid: 00c7dd5467e6e41c6b7a03bd18aee55a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1707901043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1707901036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8233d90336aea43098adf6dbabd606a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  damage: 1
+  damageRate: 1
+  damageSFX: {fileID: 8300000, guid: bc0e209e264804d339674e812ae8d433, type: 3}
 --- !u!1001 &1713973656
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5425,12 +5363,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2054871768}
-  - component: {fileID: 2054871774}
-  - component: {fileID: 2054871773}
   - component: {fileID: 2054871772}
   - component: {fileID: 2054871771}
   - component: {fileID: 2054871770}
   - component: {fileID: 2054871769}
+  - component: {fileID: 2054871773}
   m_Layer: 0
   m_Name: PolyShape (1)
   m_TagString: Lava
@@ -5542,21 +5479,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2054871767}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb977b126bc1b4f15813dcf9da9bb600, type: 3}
+  m_Script: {fileID: 11500000, guid: 00c7dd5467e6e41c6b7a03bd18aee55a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2054871774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2054871767}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8233d90336aea43098adf6dbabd606a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  damage: 1
+  damageRate: 1
+  damageSFX: {fileID: 8300000, guid: bc0e209e264804d339674e812ae8d433, type: 3}
 --- !u!1001 &2067302574
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5644,12 +5572,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2079946215}
-  - component: {fileID: 2079946214}
-  - component: {fileID: 2079946213}
   - component: {fileID: 2079946212}
   - component: {fileID: 2079946211}
   - component: {fileID: 2079946210}
   - component: {fileID: 2079946216}
+  - component: {fileID: 2079946217}
   m_Layer: 0
   m_Name: PolyShape
   m_TagString: Lava
@@ -5721,30 +5648,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2079946213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2079946209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb977b126bc1b4f15813dcf9da9bb600, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2079946214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2079946209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8233d90336aea43098adf6dbabd606a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &2079946215
 Transform:
   m_ObjectHideFlags: 0
@@ -5776,6 +5679,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2079946217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079946209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00c7dd5467e6e41c6b7a03bd18aee55a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  damageRate: 1
+  damageSFX: {fileID: 8300000, guid: bc0e209e264804d339674e812ae8d433, type: 3}
 --- !u!1 &2082732610
 GameObject:
   m_ObjectHideFlags: 0
