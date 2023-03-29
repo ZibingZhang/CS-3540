@@ -30,7 +30,7 @@ public class MouseLook : MonoBehaviour
         // pitch
         pitch -= moveY;
 
-        pitch = Mathf.Clamp(pitch, -90f, 90f);
+        pitch = Mathf.Clamp(pitch, -90f, 70f);
         transform.localRotation = Quaternion.Euler(pitch, 0, 0);
     }
 }
