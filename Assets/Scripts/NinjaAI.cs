@@ -89,7 +89,7 @@ public class NinjaAI : MonoBehaviour
     }
     void UpdateRunState()
     {
-        print(target);
+        // print(target);
         //print(target);
         //print(Vector3.Distance(transform.position, target));
         if (Vector3.Distance(transform.position, target) < 3)

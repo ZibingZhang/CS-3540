@@ -91,4 +91,9 @@ public class PlayerController : MonoBehaviour
         AudioSource.PlayClipAtPoint(clip, transform.position, 1);
         AudioSource.PlayClipAtPoint(clip, startingPosition, 1);
     }
+
+    public void ChangeSpeed(float multiplier)
+    {
+        moveSpeed = multiplier * moveSpeed;
+    }
 }
