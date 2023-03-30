@@ -51,6 +51,24 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    public static float EnemyHeight()
+    {
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        switch (currentSceneName)
+        {
+            case "Level1 (Forest)":
+                return -1.5f;
+            case "Level2 (Volcano)":
+                return 0.5f;
+            case "Level3 (Ice)":
+                return 0.5f;
+            case "Level4 (Sky)":
+                return 0.5f;
+            default:
+                return 0;
+        }
+    }
+
     private void UpdateAnnouncement(string message)
     {
         announcementDisplay.text = message;

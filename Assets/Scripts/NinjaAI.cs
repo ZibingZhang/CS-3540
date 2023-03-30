@@ -61,7 +61,7 @@ public class NinjaAI : MonoBehaviour
         eulerAngles.x = 0;
         eulerAngles.z = 0;
         transform.rotation = Quaternion.Euler(eulerAngles);
-        transform.position = new Vector3(transform.position.x, -1.5f, transform.position.z);
+        transform.position = new Vector3(transform.position.x, LevelManager.EnemyHeight(), transform.position.z);
 
         switch (currentState)
         {
