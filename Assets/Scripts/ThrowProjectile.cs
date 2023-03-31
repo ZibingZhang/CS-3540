@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ThrowProjectile : MonoBehaviour
 {
@@ -19,6 +20,11 @@ public class ThrowProjectile : MonoBehaviour
     public AudioClip fireSFX;
     public AudioClip airSFX;
     //public int currentElement = 0;
+
+    public int attackRefreshRate = 1;
+    public int specialRefreshRate = 5;
+    public Text attackText;
+    public Text specialText;
     
     [SerializeField] private GameObject waterProjectilePrefab;
     [SerializeField] private GameObject waterSpecialPrefab;
@@ -35,12 +41,17 @@ public class ThrowProjectile : MonoBehaviour
 
     private GameObject currentProjectile;
     private GameObject currentSpecial;
+    private float elapsedTimeAttack = 0f;
+    private float elapsedTimeSpecial = 0f;
     private AudioClip currentAudio;
 
     // Start is called before the first frame update
     void Start()
     {
         projectileParent = GameObject.FindGameObjectWithTag("ProjectileParent").transform;
+
+        elapsedTimeAttack = (float)attackRefreshRate;
+        elapsedTimeSpecial = (float)specialRefreshRate;
 
   /*      if (waterProjectilePrefab != null && waterSpecialPrefab != null) {
             projectiles.Add(waterProjectilePrefab);
@@ -74,13 +85,22 @@ public class ThrowProjectile : MonoBehaviour
             SwitchElement();
         }
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && elapsedTimeAttack >= attackRefreshRate)
         {
             FireProjectile(currentProjectile, projectileSpeed);
-        } else if (Input.GetButtonDown("Fire2"))
+            elapsedTimeAttack = 0f;
+        } 
+        else if (Input.GetButtonDown("Fire2") && elapsedTimeSpecial >= specialRefreshRate)
         {
             FireProjectile(currentSpecial, specialSpeed);
+            elapsedTimeSpecial = 0f;
         }
+
+        elapsedTimeAttack += Time.deltaTime;
+        elapsedTimeSpecial += Time.deltaTime;
+
+        UpdateRefreshUI();
+
     }
     void SetElementObjects(Element element)
     {
@@ -139,6 +159,31 @@ public class ThrowProjectile : MonoBehaviour
         else if (currentElement == Element.Air)
         {
             SetElementObjects(Element.Water);
+        }
+    }
+
+    private void UpdateRefreshUI() 
+    {
+        if (elapsedTimeAttack >= attackRefreshRate)
+        {
+            attackText.text = "<b>ATTACK CHARGED</b>";
+            attackText.color = Color.black;
+        } 
+        else 
+        {
+            attackText.text = "attack charging..." + (attackRefreshRate - elapsedTimeAttack);
+            attackText.color = Color.white;
+        }
+
+        if (elapsedTimeSpecial >= specialRefreshRate)
+        {
+            specialText.text = "<b>SPECIAL CHARGED</b>";
+            specialText.color = Color.black;
+        } 
+        else 
+        {
+            specialText.text = "special charging... " + (specialRefreshRate - elapsedTimeSpecial);;
+            specialText.color = Color.white;
         }
     }
 }
