@@ -13,7 +13,7 @@ public class ThrowProjectile : MonoBehaviour
         Fire,
         Air
     }
-    public Element currentElement;
+    public static Element currentElement;
 
     public AudioClip waterSFX;
     public AudioClip earthSFX;
