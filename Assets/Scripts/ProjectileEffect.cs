@@ -7,6 +7,18 @@ public class ProjectileEffect : MonoBehaviour
     float elapsedTime = 0;
 
     CharacterController playerController;
+
+    public int earthKnockback = 100;
+    public int earthKnockbackSpecial = 200;
+
+    public int fireTime = 5;
+    public int fireDamage = 2;
+    public int fireTimeSpecial = 8;
+    public int fireDamageSpecial = 5;
+
+    public int waterTime = 3;
+    public int waterTimeSpecial = 5;
+
     void Start()
     {
 
@@ -24,15 +36,15 @@ public class ProjectileEffect : MonoBehaviour
         {
             if(name.Contains("Earth"))
             {
-
+                StartCoroutine(KnockBack(projectile, earthKnockbackSpecial));
             }
             else if (name.Contains("Fire"))
             {
-
+                StartCoroutine(DamageOverTime(fireTimeSpecial, fireDamageSpecial));
             }
             else if (name.Contains("Water"))
             {
-
+                StartCoroutine(Freeze(projectile, waterTimeSpecial));
             }
             //air
             else
@@ -44,21 +56,37 @@ public class ProjectileEffect : MonoBehaviour
         {
             if (name.Contains("Earth"))
             {
-                StartCoroutine(KnockBack(projectile, 100));
+                StartCoroutine(KnockBack(projectile, earthKnockback));
             }
             else if (name.Contains("Fire"))
             {
-                StartCoroutine(DamageOverTime(5, 2));
+                StartCoroutine(DamageOverTime(fireTime, fireDamage));
             }
             else if (name.Contains("Water"))
             {
-
+                StartCoroutine(Freeze(projectile, waterTime));
             }
             //air
             else
             {
 
             }
+        }
+    }
+
+    IEnumerator Freeze(Collider projectile, int duration)
+    {
+        if (gameObject.CompareTag("Player"))
+        {
+            gameObject.GetComponent<CharacterController>().enabled = false;
+            yield return new WaitForSeconds(duration);
+            gameObject.GetComponent<CharacterController>().enabled = true;
+        }
+        else
+        {
+            gameObject.GetComponent<NinjaAI>().enabled = false;
+            yield return new WaitForSeconds(duration);
+            gameObject.GetComponent<NinjaAI>().enabled = true;
         }
     }
 
