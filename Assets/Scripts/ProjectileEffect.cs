@@ -7,6 +7,15 @@ public class ProjectileEffect : MonoBehaviour
     float elapsedTime = 0;
 
     CharacterController playerController;
+
+    public int earthKnockback = 100;
+    public int earthKnockbackSpecial = 200;
+
+    public int fireTime = 5;
+    public int fireDamage = 2;
+    public int fireTimeSpecial = 8;
+    public int fireDamageSpecial = 5;
+
     void Start()
     {
 
@@ -24,11 +33,11 @@ public class ProjectileEffect : MonoBehaviour
         {
             if(name.Contains("Earth"))
             {
-
+                StartCoroutine(KnockBack(projectile, earthKnockbackSpecial));
             }
             else if (name.Contains("Fire"))
             {
-
+                StartCoroutine(DamageOverTime(fireTimeSpecial, fireDamageSpecial));
             }
             else if (name.Contains("Water"))
             {
@@ -44,11 +53,11 @@ public class ProjectileEffect : MonoBehaviour
         {
             if (name.Contains("Earth"))
             {
-                StartCoroutine(KnockBack(projectile, 100));
+                StartCoroutine(KnockBack(projectile, earthKnockback));
             }
             else if (name.Contains("Fire"))
             {
-                StartCoroutine(DamageOverTime(5, 2));
+                StartCoroutine(DamageOverTime(fireTime, fireDamage));
             }
             else if (name.Contains("Water"))
             {

@@ -16,7 +16,6 @@ public class ProjectileCollision : MonoBehaviour
             damage = otherObject.GetComponent<ProjectileBehavior>().damageAmount;
             var health = gameObject.GetComponent<Health>();
             var effect = gameObject.GetComponent<ProjectileEffect>();
-            print("Name:" + other.gameObject.name);
             effect.AssignEffect(other.gameObject.name, other);
             health.TakeDamage(damage);
             Destroy(other.gameObject);
