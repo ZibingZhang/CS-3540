@@ -171,7 +171,7 @@ public class ThrowProjectile : MonoBehaviour
         } 
         else 
         {
-            attackText.text = "attack charging..." + (attackRefreshRate - elapsedTimeAttack);
+            attackText.text = "attack charging... " + (float)((int)(attackRefreshRate * 100 - elapsedTimeAttack * 100)) / 100f;
             attackText.color = Color.white;
         }
 
@@ -182,7 +182,7 @@ public class ThrowProjectile : MonoBehaviour
         } 
         else 
         {
-            specialText.text = "special charging... " + (specialRefreshRate - elapsedTimeSpecial);;
+            specialText.text = "special charging... " + (float)((int)(specialRefreshRate * 100 - elapsedTimeSpecial * 100)) / 100f;
             specialText.color = Color.white;
         }
     }
