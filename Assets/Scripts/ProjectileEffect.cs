@@ -16,6 +16,9 @@ public class ProjectileEffect : MonoBehaviour
     public int fireTimeSpecial = 8;
     public int fireDamageSpecial = 5;
 
+    public int waterTime = 3;
+    public int waterTimeSpecial = 5;
+
     void Start()
     {
 
@@ -41,7 +44,7 @@ public class ProjectileEffect : MonoBehaviour
             }
             else if (name.Contains("Water"))
             {
-
+                StartCoroutine(Freeze(projectile, waterTimeSpecial));
             }
             //air
             else
@@ -61,13 +64,29 @@ public class ProjectileEffect : MonoBehaviour
             }
             else if (name.Contains("Water"))
             {
-
+                StartCoroutine(Freeze(projectile, waterTime));
             }
             //air
             else
             {
 
             }
+        }
+    }
+
+    IEnumerator Freeze(Collider projectile, int duration)
+    {
+        if (gameObject.CompareTag("Player"))
+        {
+            gameObject.GetComponent<CharacterController>().enabled = false;
+            yield return new WaitForSeconds(duration);
+            gameObject.GetComponent<CharacterController>().enabled = true;
+        }
+        else
+        {
+            gameObject.GetComponent<NinjaAI>().enabled = false;
+            yield return new WaitForSeconds(duration);
+            gameObject.GetComponent<NinjaAI>().enabled = true;
         }
     }
 
