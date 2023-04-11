@@ -18,10 +18,11 @@ public class ProjectileEffect : MonoBehaviour
 
     public int waterTime = 3;
     public int waterTimeSpecial = 5;
+    public GameObject frostImage;
 
     void Start()
     {
-
+        frostImage.SetActive(false);
     }
 
     // Update is called once per frame
@@ -79,8 +80,10 @@ public class ProjectileEffect : MonoBehaviour
         if (gameObject.CompareTag("Player"))
         {
             gameObject.GetComponent<CharacterController>().enabled = false;
+            frostImage.SetActive(true);
             yield return new WaitForSeconds(duration);
             gameObject.GetComponent<CharacterController>().enabled = true;
+            frostImage.SetActive(false);
         }
         else
         {
