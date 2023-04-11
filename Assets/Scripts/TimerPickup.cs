@@ -12,9 +12,10 @@ public class TimerPickup : MonoBehaviour
     public GameObject player;
     public AudioClip pickedUpSFX; 
     public AudioClip tickNoiseSFX; 
-    public AudioClip denotateSFX; 
+    public AudioClip denotateSFX;
 
     private float currentTime;
+    private bool active = true;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,7 @@ public class TimerPickup : MonoBehaviour
         currentTime = 0;
         player = GameObject.FindGameObjectWithTag("Player");
         InvokeRepeating("PlayTick", 0, 0.5f);
+        active = true;
     }
 
     // Update is called once per frame
@@ -31,27 +33,30 @@ public class TimerPickup : MonoBehaviour
         timerWheel1.fillAmount = currentTime / maxTime;
         timerWheel2.fillAmount = currentTime / maxTime;
 
-        if (currentTime >= maxTime)
+        if (currentTime >= maxTime && active)
         {
             player.GetComponent<Health>().TakeDamage(subtractedHealth);
-            Destroy(gameObject);
+            AudioSource.PlayClipAtPoint(denotateSFX, gameObject.transform.position);
+            gameObject.SetActive(false);
+            active = false;
+            Destroy(gameObject, 0.1f);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && active)
         {
-            AudioSource.PlayClipAtPoint(pickedUp, Camera.main.transform.position);
+            AudioSource.PlayClipAtPoint(pickedUpSFX, Camera.main.transform.position);
+            active = false;
             Destroy(gameObject, 0.5f);
-
         }
         
     }
 
     private void PlayTick()
     {
-        AudioSource.PlayClipAtPoint(tickNoise, gameObject.transform.position);
+        AudioSource.PlayClipAtPoint(tickNoiseSFX, gameObject.transform.position);
     }
 
 
