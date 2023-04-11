@@ -38,8 +38,8 @@ public class MultiPlatformSpawner : MonoBehaviour
         print(stageBounds.position.x);
         print(stageBounds.position.x + stageBounds.localScale.x / 2);
 
-        Vector3 randomPosition = new Vector3(Mathf.Clamp(Random.Range(-xDirection, xDirection), stageBounds.position.x, stageBounds.position.x + stageBounds.localScale.x / 2),
-                                          Random.Range(-yDirection, yDirection) + 1,
+        Vector3 randomPosition = new Vector3(Mathf.Clamp(Random.Range(-xDirection, xDirection), stageBounds.position.x + 1, stageBounds.position.x + stageBounds.localScale.x / 2 - 1),
+                                          yDirection + 3,
                                           Random.Range(-zDirection, zDirection));
         position = currentPlatform.position + randomPosition;
 

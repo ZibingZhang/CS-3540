@@ -36,7 +36,7 @@ public class TimerPickup : MonoBehaviour
         if (currentTime >= maxTime && active)
         {
             player.GetComponent<Health>().TakeDamage(subtractedHealth);
-            AudioSource.PlayClipAtPoint(denotateSFX, gameObject.transform.position);
+            AudioSource.PlayClipAtPoint(denotateSFX, Camera.main.transform.position);
             gameObject.SetActive(false);
             active = false;
             Destroy(gameObject, 0.1f);
@@ -48,6 +48,7 @@ public class TimerPickup : MonoBehaviour
         if (other.CompareTag("Player") && active)
         {
             AudioSource.PlayClipAtPoint(pickedUpSFX, Camera.main.transform.position);
+            gameObject.SetActive(false);
             active = false;
             Destroy(gameObject, 0.5f);
         }
