@@ -2408,6 +2408,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1283034543, guid: f313cc19f0bf3e040826754aa996a547, type: 3}
+      propertyPath: stillTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1283034543, guid: f313cc19f0bf3e040826754aa996a547, type: 3}
+      propertyPath: enemySpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2447982286582017459, guid: f313cc19f0bf3e040826754aa996a547, type: 3}
       propertyPath: frostImage
       value: 
@@ -2420,6 +2428,10 @@ PrefabInstance:
       propertyPath: healthSlider
       value: 
       objectReference: {fileID: 36221815}
+    - target: {fileID: 3370495474596347749, guid: f313cc19f0bf3e040826754aa996a547, type: 3}
+      propertyPath: startingHealth
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 6186935853910114423, guid: f313cc19f0bf3e040826754aa996a547, type: 3}
       propertyPath: m_Name
       value: Ninja

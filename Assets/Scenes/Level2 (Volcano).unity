@@ -2360,6 +2360,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1283034543, guid: f313cc19f0bf3e040826754aa996a547, type: 3}
+      propertyPath: stillTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1283034543, guid: f313cc19f0bf3e040826754aa996a547, type: 3}
+      propertyPath: enemySpeed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1283034543, guid: f313cc19f0bf3e040826754aa996a547, type: 3}
       propertyPath: projectilePrefab
       value: 
       objectReference: {fileID: 1449260960837898, guid: ea471fb16b008d44886490483edd9cee, type: 3}
