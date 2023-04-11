@@ -1974,6 +1974,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be00f94c677624d35866622c2fd8f441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  subtractedHealth: 20
+  maxTime: 10
+  timerWheel1: {fileID: 8824187622187721015}
+  timerWheel2: {fileID: 8824187620990335085}
+  player: {fileID: 0}
+  pickedUp: {fileID: 8300000, guid: c1b1bb8b4d6054320ad99c8961c92d46, type: 3}
+  tickNoise: {fileID: 8300000, guid: 06be05b01c4ba4cc281e246d41aff3e9, type: 3}
 --- !u!1 &8824187622756828962
 GameObject:
   m_ObjectHideFlags: 0

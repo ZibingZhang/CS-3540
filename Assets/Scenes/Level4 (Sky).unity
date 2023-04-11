@@ -835,6 +835,56 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1308577120180686433, guid: c10b2162e79a644bd8965c15911b3230, type: 3}
   m_PrefabInstance: {fileID: 1174701420}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &507267823
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 507267824}
+  - component: {fileID: 507267825}
+  m_Layer: 0
+  m_Name: TimedPickupSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &507267824
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507267823}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1272890705}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &507267825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507267823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f191fb9eaee943769fc187f5eaae7a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj: {fileID: 3907341287271885688, guid: 2ab2aa1d775ef4c89a90a7982410cd97, type: 3}
+  spawnTime: 1
+  bounds:
+  - {fileID: 468382354}
+  - {fileID: 1712907596}
+  - {fileID: 494582311}
 --- !u!114 &611807338 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 559635116370813097, guid: 8a1f94409976e4e679bdba47801649dc, type: 3}
@@ -1732,6 +1782,10 @@ PrefabInstance:
       propertyPath: timerWheel2
       value: 
       objectReference: {fileID: 1201726668}
+    - target: {fileID: 4567956120076978655, guid: 6f1ff6af8a7e943c28de10c01ea40aab, type: 3}
+      propertyPath: subtractedHealth
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8824187620990335085, guid: 6f1ff6af8a7e943c28de10c01ea40aab, type: 3}
       propertyPath: m_FillAmount
       value: 0.2

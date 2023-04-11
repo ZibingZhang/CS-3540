@@ -10,6 +10,9 @@ public class TimerPickup : MonoBehaviour
     public Image timerWheel1;
     public Image timerWheel2;
     public GameObject player;
+    public AudioClip pickedUpSFX; 
+    public AudioClip tickNoiseSFX; 
+    public AudioClip denotateSFX; 
 
     private float currentTime;
 
@@ -18,6 +21,7 @@ public class TimerPickup : MonoBehaviour
     {
         currentTime = 0;
         player = GameObject.FindGameObjectWithTag("Player");
+        InvokeRepeating("PlayTick", 0, 0.5f);
     }
 
     // Update is called once per frame
@@ -30,11 +34,24 @@ public class TimerPickup : MonoBehaviour
         if (currentTime >= maxTime)
         {
             player.GetComponent<Health>().TakeDamage(subtractedHealth);
+            Destroy(gameObject);
         }
-        else if (currentTime % 0.5 == 0)
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
         {
+            AudioSource.PlayClipAtPoint(pickedUp, Camera.main.transform.position);
+            Destroy(gameObject, 0.5f);
 
         }
+        
+    }
+
+    private void PlayTick()
+    {
+        AudioSource.PlayClipAtPoint(tickNoise, gameObject.transform.position);
     }
 
 

@@ -5,9 +5,6 @@ using UnityEngine;
 public class HealthPickup : MonoBehaviour
 {
     public int addedHealth = 10;
-    public float degreesPerSecond = 15.0f;
-    public float amplitude = 0.5f;
-    public float frequency = 1f;
     public AudioClip audioPickup; 
 
     void Start()
