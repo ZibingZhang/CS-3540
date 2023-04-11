@@ -1049,6 +1049,10 @@ PrefabInstance:
       propertyPath: currentElement
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 281227404729275298, guid: 3718a43bce5cc1942a31eb5f5f959c18, type: 3}
+      propertyPath: specialRefreshRate
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1754936748564817666, guid: 3718a43bce5cc1942a31eb5f5f959c18, type: 3}
       propertyPath: healthText
       value: 
