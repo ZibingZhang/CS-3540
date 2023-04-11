@@ -18,7 +18,7 @@ public class ProjectileEffect : MonoBehaviour
 
     public int waterTime = 3;
     public int waterTimeSpecial = 5;
-    public GameObject frostImage;
+    public GameObject frostImage = null;
 
     void Start()
     {

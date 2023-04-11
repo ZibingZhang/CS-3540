@@ -736,6 +736,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7990386575545360061, guid: 3718a43bce5cc1942a31eb5f5f959c18, type: 3}
+      propertyPath: frostImage
+      value: 
+      objectReference: {fileID: 1154059423}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3718a43bce5cc1942a31eb5f5f959c18, type: 3}
 --- !u!4 &463059274 stripped
@@ -1367,6 +1371,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1154059423 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3783753785660763058, guid: 8a1f94409976e4e679bdba47801649dc, type: 3}
+  m_PrefabInstance: {fileID: 1154059419}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1174701420
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2399,6 +2408,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2447982286582017459, guid: f313cc19f0bf3e040826754aa996a547, type: 3}
+      propertyPath: frostImage
+      value: 
+      objectReference: {fileID: 1154059423}
     - target: {fileID: 3370495474596347749, guid: f313cc19f0bf3e040826754aa996a547, type: 3}
       propertyPath: healthText
       value: 

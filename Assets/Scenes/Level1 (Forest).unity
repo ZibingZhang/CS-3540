@@ -6508,6 +6508,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &559635116603703223 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3783753785660763058, guid: 8a1f94409976e4e679bdba47801649dc, type: 3}
+  m_PrefabInstance: {fileID: 559635116603703220}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4128198335144514345
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6595,6 +6600,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7990386575545360061, guid: 3718a43bce5cc1942a31eb5f5f959c18, type: 3}
+      propertyPath: frostImage
+      value: 
+      objectReference: {fileID: 559635116603703223}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3718a43bce5cc1942a31eb5f5f959c18, type: 3}
 --- !u!1 &4128198335144514346 stripped
@@ -6847,6 +6856,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.04827164
       objectReference: {fileID: 0}
+    - target: {fileID: 2447982286582017459, guid: f313cc19f0bf3e040826754aa996a547, type: 3}
+      propertyPath: frostImage
+      value: 
+      objectReference: {fileID: 559635116603703223}
     - target: {fileID: 3370495474596347749, guid: f313cc19f0bf3e040826754aa996a547, type: 3}
       propertyPath: healthText
       value: 
