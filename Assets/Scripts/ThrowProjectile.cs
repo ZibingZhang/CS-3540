@@ -25,6 +25,8 @@ public class ThrowProjectile : MonoBehaviour
     public int specialRefreshRate = 5;
     public Text attackText;
     public Text specialText;
+    public Image attackCharge;
+    public Image specialCharge;
     
     [SerializeField] private GameObject waterProjectilePrefab;
     [SerializeField] private GameObject waterSpecialPrefab;
@@ -52,6 +54,9 @@ public class ThrowProjectile : MonoBehaviour
 
         elapsedTimeAttack = (float)attackRefreshRate;
         elapsedTimeSpecial = (float)specialRefreshRate;
+
+        attackCharge.fillAmount = 0;
+        specialCharge.fillAmount = 0;
 
   /*      if (waterProjectilePrefab != null && waterSpecialPrefab != null) {
             projectiles.Add(waterProjectilePrefab);
@@ -168,22 +173,26 @@ public class ThrowProjectile : MonoBehaviour
         {
             attackText.text = "<b>ATTACK CHARGED</b>";
             attackText.color = Color.black;
+            attackCharge.fillAmount = 0;
         } 
         else 
         {
-            attackText.text = "attack charging... " + (float)((int)(attackRefreshRate * 100 - elapsedTimeAttack * 100)) / 100f;
+            attackText.text = "attack charging... ";
             attackText.color = Color.white;
+            attackCharge.fillAmount = elapsedTimeAttack / attackRefreshRate;
         }
 
         if (elapsedTimeSpecial >= specialRefreshRate)
         {
             specialText.text = "<b>SPECIAL CHARGED</b>";
             specialText.color = Color.black;
+            specialCharge.fillAmount = 0;
         } 
         else 
         {
-            specialText.text = "special charging... " + (float)((int)(specialRefreshRate * 100 - elapsedTimeSpecial * 100)) / 100f;
+            specialText.text = "special charging... ";
             specialText.color = Color.white;
+            specialCharge.fillAmount = elapsedTimeSpecial / specialRefreshRate;
         }
     }
 }
