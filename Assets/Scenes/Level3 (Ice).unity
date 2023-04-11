@@ -431,6 +431,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &391270091 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4748707447248859090, guid: 3011e8639bf0b4d29ae14b21084ba12c, type: 3}
+  m_PrefabInstance: {fileID: 195143197}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &426230913 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 152024, guid: eb71b2cd34a615344babc33ea2651dbc, type: 3}
@@ -681,6 +686,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 448982, guid: 6a3bdbed08d1abd4fb7dbab3c2526dd2, type: 3}
   m_PrefabInstance: {fileID: 564374052}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &693526976
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 693526977}
+  - component: {fileID: 693526978}
+  m_Layer: 0
+  m_Name: TrapPickupSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &693526977
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693526976}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 19.46045, y: -0.8044088, z: -2.5506928}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 391270091}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &693526978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693526976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3114c61730b8e142aabd7b7771ade9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj: {fileID: 3907341287271885688, guid: 2ab2aa1d775ef4c89a90a7982410cd97, type: 3}
+  spawnTime: 10
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
