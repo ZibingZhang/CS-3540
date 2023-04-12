@@ -24,7 +24,6 @@ public class SpeedBoost : MonoBehaviour
     {
         if (other.CompareTag("Player")) 
         {
-            print("speed boost");
             other.gameObject.GetComponent<PlayerController>().ChangeSpeed(boost);
             AudioSource.PlayClipAtPoint(speedSFX, transform.position, 1);
         }
@@ -34,7 +33,6 @@ public class SpeedBoost : MonoBehaviour
     {
         if (other.CompareTag("Player")) 
         {
-            print("speed boost gone");
             other.gameObject.GetComponent<PlayerController>().ChangeSpeed(1.0f / boost);
             AudioSource.PlayClipAtPoint(speedSFX, transform.position, 1);
         }
