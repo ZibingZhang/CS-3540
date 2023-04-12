@@ -80,6 +80,9 @@ public class LevelManager : MonoBehaviour
         Debug.Log("Next level, current scene name: " + currentSceneName);
         switch (currentSceneName)
         {
+            case "Level0 (Tutorial)":
+                SceneManager.LoadScene("Level1 (Forest)");
+                break;
             case "Level1 (Forest)":
                 SceneManager.LoadScene("Level2 (Volcano)");
                 break;

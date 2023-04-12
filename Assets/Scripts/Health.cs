@@ -12,7 +12,7 @@ public class Health : MonoBehaviour
     public AudioClip hurtSFX;
     public AudioClip dieSFX;
 
-    private int currentHealth;
+    public int currentHealth;
     private LevelManager levelManager;
 
     void Start()
