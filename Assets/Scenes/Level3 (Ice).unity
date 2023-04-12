@@ -2416,9 +2416,29 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1283034543, guid: f313cc19f0bf3e040826754aa996a547, type: 3}
+      propertyPath: percentAttack
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1283034543, guid: f313cc19f0bf3e040826754aa996a547, type: 3}
       propertyPath: projectilePrefab
       value: 
       objectReference: {fileID: 1228652472414832, guid: 2920ebe7e4dba5242a404fa0fa7ab0ea, type: 3}
+    - target: {fileID: 1283034543, guid: f313cc19f0bf3e040826754aa996a547, type: 3}
+      propertyPath: attackProjectilePrefab
+      value: 
+      objectReference: {fileID: 1228652472414832, guid: 2920ebe7e4dba5242a404fa0fa7ab0ea, type: 3}
+    - target: {fileID: 1283034543, guid: f313cc19f0bf3e040826754aa996a547, type: 3}
+      propertyPath: specialProjectilePrefab
+      value: 
+      objectReference: {fileID: 1018882707796302, guid: f013a7465c9b4274bbd66d2ff9761187, type: 3}
+    - target: {fileID: 299062824605003393, guid: f313cc19f0bf3e040826754aa996a547, type: 3}
+      propertyPath: attackProjectilePrefab
+      value: 
+      objectReference: {fileID: 1228652472414832, guid: 2920ebe7e4dba5242a404fa0fa7ab0ea, type: 3}
+    - target: {fileID: 299062824605003393, guid: f313cc19f0bf3e040826754aa996a547, type: 3}
+      propertyPath: specialProjectilePrefab
+      value: 
+      objectReference: {fileID: 1018882707796302, guid: f013a7465c9b4274bbd66d2ff9761187, type: 3}
     - target: {fileID: 2447982286582017459, guid: f313cc19f0bf3e040826754aa996a547, type: 3}
       propertyPath: frostImage
       value: 

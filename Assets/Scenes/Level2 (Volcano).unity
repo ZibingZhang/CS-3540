@@ -2379,6 +2379,18 @@ PrefabInstance:
       propertyPath: projectilePrefab
       value: 
       objectReference: {fileID: 1449260960837898, guid: ea471fb16b008d44886490483edd9cee, type: 3}
+    - target: {fileID: 299062824605003393, guid: f313cc19f0bf3e040826754aa996a547, type: 3}
+      propertyPath: percentAttack
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 299062824605003393, guid: f313cc19f0bf3e040826754aa996a547, type: 3}
+      propertyPath: attackProjectilePrefab
+      value: 
+      objectReference: {fileID: 1449260960837898, guid: ea471fb16b008d44886490483edd9cee, type: 3}
+    - target: {fileID: 299062824605003393, guid: f313cc19f0bf3e040826754aa996a547, type: 3}
+      propertyPath: specialProjectilePrefab
+      value: 
+      objectReference: {fileID: 1033026374199576, guid: 5c16c201ada1f4a43965ab102abb63a9, type: 3}
     - target: {fileID: 2447982286582017459, guid: f313cc19f0bf3e040826754aa996a547, type: 3}
       propertyPath: frostImage
       value: 

@@ -5,7 +5,9 @@ using UnityEngine.AI;
 
 public class NinjaAI : MonoBehaviour
 {
-    public GameObject projectilePrefab;
+    public GameObject attackProjectilePrefab;
+    public GameObject specialProjectilePrefab;
+    public float percentAttack = 0.5f;
     public float stillTime = 3;
     public float enemySpeed = 7;
     public enum FSMStates
@@ -182,8 +184,20 @@ public class NinjaAI : MonoBehaviour
 
     private void FireAtPlayer()
     {
+        GameObject currentPrefab;
+        float randomValue = Random.value;
+
+        if (randomValue <= percentAttack)
+        {
+            currentPrefab = attackProjectilePrefab;
+        }
+        else
+        {
+            currentPrefab = specialProjectilePrefab;
+        }
+
         Vector3 direction = (player.transform.position - transform.position).normalized + new Vector3(0, 0.5f, 0);
-        GameObject projectile = Instantiate(projectilePrefab,
+        GameObject projectile = Instantiate(currentPrefab,
                 transform.position + direction, transform.rotation);
         Rigidbody rigidBody = projectile.GetComponent<Rigidbody>();
         rigidBody.AddForce(direction * 50, ForceMode.VelocityChange);

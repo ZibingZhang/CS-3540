@@ -6878,6 +6878,14 @@ PrefabInstance:
       propertyPath: projectilePrefab
       value: 
       objectReference: {fileID: 1253354654402752, guid: 4f2c211b3d32c5f4fa7eb7687e824ca7, type: 3}
+    - target: {fileID: 1283034543, guid: f313cc19f0bf3e040826754aa996a547, type: 3}
+      propertyPath: attackProjectilePrefab
+      value: 
+      objectReference: {fileID: 1253354654402752, guid: 4f2c211b3d32c5f4fa7eb7687e824ca7, type: 3}
+    - target: {fileID: 1283034543, guid: f313cc19f0bf3e040826754aa996a547, type: 3}
+      propertyPath: specialProjectilePrefab
+      value: 
+      objectReference: {fileID: 1253354654402752, guid: d3ffc43c2466bd441a88c3ecd7571090, type: 3}
     - target: {fileID: 1801143658457692323, guid: f313cc19f0bf3e040826754aa996a547, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.02290056

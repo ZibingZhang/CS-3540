@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    public GameObject projectilePrefab;
+    public GameObject attackProjectilePrefab;
+    public GameObject specialProjectilePrefab;
     public float frequency = 5;
     public float erraticness = 10;
     public float stillTime = 3;
     public float enemySpeed = 5;
+    public float percentAttack = 0.5f;
 
     public enum FSMStates
     {
@@ -145,8 +147,22 @@ public class EnemyAI : MonoBehaviour
 
     private void FireAtPlayer()
     {
+        GameObject currentPrefab;
+        float randomValue = Random.value;
+
+        print(randomValue);
+
+        if (randomValue <= percentAttack)
+        {
+            currentPrefab = attackProjectilePrefab;
+        }
+        else
+        {
+            currentPrefab = specialProjectilePrefab;
+        }
+
         Vector3 direction = (player.transform.position - transform.position).normalized + new Vector3(0, 0.05f, 0);
-        GameObject projectile = Instantiate(projectilePrefab,
+        GameObject projectile = Instantiate(currentPrefab,
                 transform.position + direction, transform.rotation);
         Rigidbody rigidBody = projectile.GetComponent<Rigidbody>();
         rigidBody.AddForce(direction * 50, ForceMode.VelocityChange);

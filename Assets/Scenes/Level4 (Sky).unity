@@ -2789,6 +2789,18 @@ PrefabInstance:
       propertyPath: enemySpeed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1283034543, guid: f313cc19f0bf3e040826754aa996a547, type: 3}
+      propertyPath: percentAttack
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1283034543, guid: f313cc19f0bf3e040826754aa996a547, type: 3}
+      propertyPath: attackProjectilePrefab
+      value: 
+      objectReference: {fileID: 1519322442116508, guid: fa331b8213914f44cab65156c1ba366e, type: 3}
+    - target: {fileID: 1283034543, guid: f313cc19f0bf3e040826754aa996a547, type: 3}
+      propertyPath: specialProjectilePrefab
+      value: 
+      objectReference: {fileID: 1762457832057232, guid: b243715daaaf5734aa6c9a6b66f975ca, type: 3}
     - target: {fileID: 2447982286582017459, guid: f313cc19f0bf3e040826754aa996a547, type: 3}
       propertyPath: frostImage
       value: 
