@@ -706,15 +706,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4128198336212290250, guid: 3718a43bce5cc1942a31eb5f5f959c18, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.8
+      value: 7.3
       objectReference: {fileID: 0}
     - target: {fileID: 4128198336212290250, guid: 3718a43bce5cc1942a31eb5f5f959c18, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.4
+      value: 1.84
       objectReference: {fileID: 0}
     - target: {fileID: 4128198336212290250, guid: 3718a43bce5cc1942a31eb5f5f959c18, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4128198336212290250, guid: 3718a43bce5cc1942a31eb5f5f959c18, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1417,6 +1417,10 @@ PrefabInstance:
     - target: {fileID: 559635115041578703, guid: 8a1f94409976e4e679bdba47801649dc, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 559635115376690878, guid: 8a1f94409976e4e679bdba47801649dc, type: 3}
+      propertyPath: m_MaxValue
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 559635116533748931, guid: 8a1f94409976e4e679bdba47801649dc, type: 3}
       propertyPath: m_Pivot.x
