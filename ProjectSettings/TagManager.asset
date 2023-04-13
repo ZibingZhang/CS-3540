@@ -13,6 +13,9 @@ TagManager:
   - Stage
   - Enemy
   - OffStage
+  - WanderPoint
+  - Eyes
+  - Instructions
   layers:
   - Default
   - TransparentFX
