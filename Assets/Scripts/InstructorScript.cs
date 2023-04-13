@@ -24,7 +24,7 @@ public class InstructorScript : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         enemyHealth = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Health>();
 
-        instructions.text = "Welcome to the tutorial. Begin by speaking with me. I'm over here! To your left. Use the arrow keys to move around and the mouse to look around.";
+        instructions.text = "Welcome to the tutorial. Begin by speaking with the NPC to your left. Use the arrow keys to move around and the mouse to look around.";
 
         levelManager = FindObjectOfType<LevelManager>();
     }
@@ -46,7 +46,7 @@ public class InstructorScript : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     step++;
-                    instructions.text = "Your task is to defeat the opponent in each level. Press left click to attack. Your attacks have a cooldown. You can see cooldowns on the bottom left";
+                    instructions.text = "Your task is to defeat the opponent in each level. Press left click to attack. Your attacks have a cooldown.";
                 }
                 break;
             case 2:
@@ -60,7 +60,7 @@ public class InstructorScript : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Mouse1))
                 {
                     step++;
-                    instructions.text = "You can use multiple different elements. Press 'z' to switch elements. You can see which element you are using in the bottom panel";
+                    instructions.text = "You can use multiple different elements. Press 'z' to switch elements.";
                 }
                 break;
             case 4:
@@ -74,7 +74,7 @@ public class InstructorScript : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
                     step++;
-                    instructions.text = "That's everything! Defeat the enemy across the arena from you to continue into the actual game. The enemy's health bar is on the top right, in red. The other health bar is your own. Don't let your health reach zero!";
+                    instructions.text = "That's everything! Defeat the enemy across the arena from you to continue into the actual game.";
                 }
                 break;
             case 6:
