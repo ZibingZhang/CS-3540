@@ -1869,6 +1869,7 @@ GameObject:
   - component: {fileID: 8824187622705830341}
   - component: {fileID: 8824187622705830342}
   - component: {fileID: 4567956120076978655}
+  - component: {fileID: 7147548994206743717}
   m_Layer: 0
   m_Name: TimerPickup
   m_TagString: Untagged
@@ -1982,6 +1983,21 @@ MonoBehaviour:
   pickedUpSFX: {fileID: 8300000, guid: c1b1bb8b4d6054320ad99c8961c92d46, type: 3}
   tickNoiseSFX: {fileID: 8300000, guid: 06be05b01c4ba4cc281e246d41aff3e9, type: 3}
   denotateSFX: {fileID: 8300000, guid: 54a3da4cde2974161b828b16d744652f, type: 3}
+--- !u!114 &7147548994206743717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8824187622705830343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d01b1013696932947bfbc62246d1292d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  degreesPerSecond: 30
+  amplitude: 0.1
+  frequency: 1
 --- !u!1 &8824187622756828962
 GameObject:
   m_ObjectHideFlags: 0
