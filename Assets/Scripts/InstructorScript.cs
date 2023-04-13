@@ -6,12 +6,16 @@ using UnityEngine.UI;
 public class InstructorScript : MonoBehaviour
 {
     public Text instructions;
+    public Transform textPanel;
+    public float typingSpeed= 0.02f;
     private GameObject player;
     private Health enemyHealth;
-    private Transform eyes;
+    public Transform eyes;
     private float talkDistance = 5;
     private float fieldOfView = 45;
-
+    private float scalar = 500;
+    private string text = "";
+    private RectTransform panelRectTransform;
     private LevelManager levelManager;
 
     private int step = 0;
@@ -24,9 +28,12 @@ public class InstructorScript : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         enemyHealth = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Health>();
 
-        instructions.text = "Welcome to the tutorial. Begin by speaking with me. I'm over here! To your left. Use the arrow keys to move around and the mouse to look around.";
+        text = "Welcome to the tutorial. Begin by speaking with me. I'm over here! To your left. Use the arrow keys to move around and the mouse to look around.";
 
         levelManager = FindObjectOfType<LevelManager>();
+        panelRectTransform = textPanel.GetComponent<RectTransform>();
+
+        StartCoroutine(TypeInstructions());
     }
 
     // Update is called once per frame
@@ -39,42 +46,52 @@ public class InstructorScript : MonoBehaviour
                 if (IsPlayerInFOV())
                 {
                     step++;
-                    instructions.text = "You can also use the spacebar to jump!";
+                    text = "You can also use the spacebar to jump!";
+                    NextSentence();
                 }
                 break;
             case 1:
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     step++;
-                    instructions.text = "Your task is to defeat the opponent in each level. Press left click to attack. Your attacks have a cooldown. You can see cooldowns on the bottom left.";
+                    text = "Your task is to defeat the opponent in each level. Press left click to attack. Your attacks have a cooldown. You can see cooldowns on the bottom left.";
+
+                    NextSentence();
                 }
                 break;
             case 2:
                 if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
                     step++;
-                    instructions.text = "Press right click to special attack. These attacks have a longer cooldown.";
+                    text = "Press right click to special attack. These attacks have a longer cooldown.";
+
+                    NextSentence();
                 }
                 break;
             case 3:
                 if (Input.GetKeyDown(KeyCode.Mouse1))
                 {
                     step++;
-                    instructions.text = "You can use multiple different elements. Press 'z' to switch elements. You can see which element you are using in the bottom panel";
-                }
+                    text = "You can use multiple different elements. Press 'z' to switch elements. You can see which element you are using in the bottom panel";
+
+                    NextSentence();                }
                 break;
             case 4:
                 if (Input.GetKeyDown(KeyCode.Z))
                 {
                     step++;
-                    instructions.text = "Now attack with the new element.";
+                    text = "Now attack with the new element.";
+
+                    NextSentence();
                 }
                 break;
             case 5:
                 if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
                     step++;
-                    instructions.text = "That's everything! Defeat the enemy across the arena from you to continue into the actual game. The enemy's health bar is on the top right, in red. The other health bar is your own. Don't let your health reach zero!";
+                    text = "That's everything! Defeat the enemy across the arena from you to continue into the actual game. The enemy's health bar is on the top right, in red. The other health bar is your own. Don't let your health reach zero!";
+
+                    NextSentence();
                 }
                 break;
             case 6:
@@ -112,5 +129,27 @@ public class InstructorScript : MonoBehaviour
             }
         }
         return false;
+    }
+    IEnumerator TypeInstructions()
+    {
+        foreach (char letter in text.ToCharArray())
+        {
+            instructions.text += letter;
+            yield return new WaitForSeconds(typingSpeed);
+        }
+    }
+    public void NextSentence()
+    {
+        float numLines = text.ToCharArray().Length/50 * scalar;
+        numLines = Mathf.Clamp(numLines, 400, 6000);
+        if (numLines == 0)
+        {
+            panelRectTransform.sizeDelta = new Vector2(panelRectTransform.sizeDelta.x, 0f);
+        }
+        panelRectTransform.sizeDelta = new Vector2(panelRectTransform.sizeDelta.x,
+            numLines);
+        instructions.text = "";
+        StartCoroutine(TypeInstructions());
+
     }
 }
