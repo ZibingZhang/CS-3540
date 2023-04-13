@@ -46,7 +46,7 @@ public class InstructorScript : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     step++;
-                    instructions.text = "Your task is to defeat the opponent in each level. Press left click to attack. Your attacks have a cooldown. You can see cooldowns on the bottom left";
+                    instructions.text = "Your task is to defeat the opponent in each level. Press left click to attack. Your attacks have a cooldown. You can see cooldowns on the bottom left.";
                 }
                 break;
             case 2:
