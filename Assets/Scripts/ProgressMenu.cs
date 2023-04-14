@@ -2,9 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ProgressMenu : MonoBehaviour
 {
+    public GameObject earth;
+    public GameObject fire;
+    public GameObject water;
+    public GameObject air;
 
     public void EarthLevel()
     {
@@ -36,6 +41,9 @@ public class ProgressMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        earth.SetActive(LevelManager.earth);
+        fire.SetActive(LevelManager.fire);
+        water.SetActive(LevelManager.water);
+        air.SetActive(LevelManager.air);
     }
 }

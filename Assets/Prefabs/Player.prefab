@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbf76901a7d414241b4681e72e4b2079, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 150
+  sensitivitySlider: {fileID: 4319656217393588463, guid: ac07432b193d7ff458b141cd56197ca2, type: 3}
 --- !u!114 &281227404729275298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,7 +208,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad542dfc31add454890b9090b21c90f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentElement: 0
   waterSFX: {fileID: 8300000, guid: 2d276ec6a952b43c7bae481497f1ea9a, type: 3}
   earthSFX: {fileID: 8300000, guid: 4e48c26877fbb43c487059e86e8aede8, type: 3}
   fireSFX: {fileID: 8300000, guid: cf8c9a652782e4b1289ae348b6944532, type: 3}
@@ -217,6 +216,8 @@ MonoBehaviour:
   specialRefreshRate: 5
   attackText: {fileID: 0}
   specialText: {fileID: 0}
+  attackCharge: {fileID: 0}
+  specialCharge: {fileID: 0}
   waterProjectilePrefab: {fileID: 1228652472414832, guid: 2920ebe7e4dba5242a404fa0fa7ab0ea, type: 3}
   waterSpecialPrefab: {fileID: 1018882707796302, guid: f013a7465c9b4274bbd66d2ff9761187, type: 3}
   earthProjectilePrefab: {fileID: 1253354654402752, guid: 4f2c211b3d32c5f4fa7eb7687e824ca7, type: 3}
@@ -361,6 +362,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da30d3fd0c9091649989051838f96a68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  earthKnockback: 100
+  earthKnockbackSpecial: 200
+  fireTime: 5
+  fireDamage: 2
+  fireTimeSpecial: 8
+  fireDamageSpecial: 5
+  waterTime: 3
+  waterTimeSpecial: 5
+  frostImage: {fileID: 0}
 --- !u!143 &4128198336212290253
 CharacterController:
   m_ObjectHideFlags: 0
@@ -396,6 +406,7 @@ MonoBehaviour:
   healthText: {fileID: 0}
   hurtSFX: {fileID: 8300000, guid: 2d4ff87de012f40efb1e64c4f8196f69, type: 3}
   dieSFX: {fileID: 8300000, guid: 27db08b8818004194b7623ef2c365991, type: 3}
+  currentHealth: 0
 --- !u!114 &8650706857184053722
 MonoBehaviour:
   m_ObjectHideFlags: 0

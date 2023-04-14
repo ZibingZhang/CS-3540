@@ -11,6 +11,10 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Text announcementDisplay;
     //[SerializeField] private AudioClip winSFX;
     //[SerializeField] private AudioClip loseSFX;
+    public static bool earth = false;
+    public static bool fire = false;
+    public static bool water = false;
+    public static bool air = false;
 
     private int enemyCount;
 
@@ -84,16 +88,20 @@ public class LevelManager : MonoBehaviour
                 SceneManager.LoadScene("Level1 (Forest)");
                 break;
             case "Level1 (Forest)":
+                earth = true;
                 SceneManager.LoadScene("Level2 (Volcano)");
                 break;
             case "Level2 (Volcano)":
+                fire = true;
                 SceneManager.LoadScene("Level3 (Ice)");
                 break;
             case "Level3 (Ice)":
+                water = true;
                 SceneManager.LoadScene("Level4 (Sky)");
                 break;
             case "Level4 (Sky)":
                 // do nothing
+                air = true;
                 break;
         }
     }
