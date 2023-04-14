@@ -88,7 +88,6 @@ public class LevelManager : MonoBehaviour
                 SceneManager.LoadScene("Level1Cutscene");
                 break;
             case "Level1Cutscene":
-                earth = true;
                 SceneManager.LoadScene("Level1 (Forest)");
                 break;
             case "Level1 (Forest)":
@@ -96,7 +95,6 @@ public class LevelManager : MonoBehaviour
                 SceneManager.LoadScene("Level2Cutscene");
                 break;
             case "Level2Cutscene":
-                earth = true;
                 SceneManager.LoadScene("Level2 (Volcano)");
                 break;
             case "Level2 (Volcano)":
@@ -104,11 +102,13 @@ public class LevelManager : MonoBehaviour
                 SceneManager.LoadScene("Level3Cutscene");
                 break;
             case "Level3Cutscene":
-                water = true;
                 SceneManager.LoadScene("Level3 (Ice)");
                 break;
             case "Level3 (Ice)":
                 water = true;
+                SceneManager.LoadScene("Level4Cutscene");
+                break;
+            case "Level4Cutscene":
                 SceneManager.LoadScene("Level4 (Sky)");
                 break;
             case "Level4 (Sky)":
