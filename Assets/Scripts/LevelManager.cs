@@ -101,6 +101,10 @@ public class LevelManager : MonoBehaviour
                 break;
             case "Level2 (Volcano)":
                 fire = true;
+                SceneManager.LoadScene("Level3Cutscene");
+                break;
+            case "Level3Cutscene":
+                water = true;
                 SceneManager.LoadScene("Level3 (Ice)");
                 break;
             case "Level3 (Ice)":
