@@ -2680,7 +2680,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1283034543, guid: f313cc19f0bf3e040826754aa996a547, type: 3}
       propertyPath: percentAttack
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1283034543, guid: f313cc19f0bf3e040826754aa996a547, type: 3}
       propertyPath: attackProjectilePrefab
