@@ -13,7 +13,7 @@ public class InstructorScript : MonoBehaviour
     public Transform eyes;
     private float talkDistance = 5;
     private float fieldOfView = 45;
-    private float scalar = 500;
+    private float scalar = 400;
     private string text = "";
     private RectTransform panelRectTransform;
     private LevelManager levelManager;
@@ -39,7 +39,6 @@ public class InstructorScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(step);
         switch(step)
         {
             case 0:
@@ -72,7 +71,7 @@ public class InstructorScript : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Mouse1))
                 {
                     step++;
-                    text = "You can use multiple different elements. Press 'z' to switch elements. You can see which element you are using in the bottom panel";
+                    text = "You can use multiple different elements. Press 'z' to switch elements. You can see which element you are using in the bottom panel.";
 
                     NextSentence();                }
                 break;
@@ -80,7 +79,7 @@ public class InstructorScript : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Z))
                 {
                     step++;
-                    text = "Now attack with the new element.";
+                    text = "Each element has a different effect. Now attack with the new element.";
 
                     NextSentence();
                 }
@@ -89,7 +88,7 @@ public class InstructorScript : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Mouse0))
                 {
                     step++;
-                    text = "That's everything! Defeat the enemy across the arena from you to continue into the actual game. The enemy's health bar is on the top right, in red. The other health bar is your own. Don't let your health reach zero!";
+                    text = "That's everything! Defeat the enemy across the arena from you to continue into the actual game. The enemy's health bar is on the top right, in red. The other health bar is your own. Don't let your own health reach zero!";
 
                     NextSentence();
                 }
@@ -132,22 +131,27 @@ public class InstructorScript : MonoBehaviour
     }
     IEnumerator TypeInstructions()
     {
+        float speed = player.GetComponent<PlayerController>().moveSpeed;
+        player.GetComponent<PlayerController>().moveSpeed = 0;
         foreach (char letter in text.ToCharArray())
         {
             instructions.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
+        player.GetComponent<PlayerController>().moveSpeed = speed;
     }
     public void NextSentence()
     {
-        float numLines = text.ToCharArray().Length / 40 * scalar;
+        float numLines = Mathf.Ceil(text.ToCharArray().Length/40) * scalar;
+        print(numLines);
         numLines = Mathf.Clamp(numLines, 750, 2000);
+        print("after clamp" + numLines);
         if (numLines == 0)
         {
             panelRectTransform.sizeDelta = new Vector2(panelRectTransform.sizeDelta.x, 0f);
         }
         panelRectTransform.sizeDelta = new Vector2(panelRectTransform.sizeDelta.x,
-            numLines);
+            numLines + 100);
         instructions.text = "";
         StartCoroutine(TypeInstructions());
 
