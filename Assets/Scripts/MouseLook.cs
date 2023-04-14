@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MouseLook : MonoBehaviour
 {
-    public float mouseSensitivity = 10;
+    public static float mouseSensitivity = 10;
+    public Slider sensitivitySlider;
 
     float pitch = 0;
     Transform playerBody;
@@ -33,4 +35,10 @@ public class MouseLook : MonoBehaviour
         pitch = Mathf.Clamp(pitch, -90f, 70f);
         transform.localRotation = Quaternion.Euler(pitch, 0, 0);
     }
+
+    void SubmitSliderSetting()
+    {
+        mouseSensitivity = sensitivitySlider.value;
+    }
+
 }

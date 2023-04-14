@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.38148043, g: 0.46817917, b: 0.6131963, a: 1}
+  m_IndirectSpecularColor: {r: 0.3822313, g: 0.46889317, b: 0.613982, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6574,6 +6574,10 @@ PrefabInstance:
       propertyPath: healthSlider
       value: 
       objectReference: {fileID: 870489885}
+    - target: {fileID: 4128198336103382620, guid: 3718a43bce5cc1942a31eb5f5f959c18, type: 3}
+      propertyPath: sensitivitySlider
+      value: 
+      objectReference: {fileID: 4319656217393588463, guid: ac07432b193d7ff458b141cd56197ca2, type: 3}
     - target: {fileID: 4128198336103382621, guid: 3718a43bce5cc1942a31eb5f5f959c18, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.5
