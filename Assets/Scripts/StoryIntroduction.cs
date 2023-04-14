@@ -26,7 +26,7 @@ public class StoryIntroduction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))// && !typing)
+        if (Input.GetKeyDown(KeyCode.Space) && !typing)
         {
             continueText.SetActive(false);
             switch(step)
@@ -73,7 +73,7 @@ public class StoryIntroduction : MonoBehaviour
                     break;
                 case 8:
                     storyText.text = "";
-                    levelManager.LevelWon();
+                    levelManager.NextLevel();
                     break;
             }
         }

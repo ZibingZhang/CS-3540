@@ -78,13 +78,17 @@ public class LevelManager : MonoBehaviour
         announcementDisplay.text = message;
     }
 
-    private void NextLevel()
+    public void NextLevel()
     {
         string currentSceneName = SceneManager.GetActiveScene().name;
         Debug.Log("Next level, current scene name: " + currentSceneName);
         switch (currentSceneName)
         {
             case "Level0 (Tutorial)":
+                SceneManager.LoadScene("Level1Cutscene");
+                break;
+            case "Level1Cutscene":
+                earth = true;
                 SceneManager.LoadScene("Level1 (Forest)");
                 break;
             case "Level1 (Forest)":

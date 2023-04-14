@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 0d80fda70742a49839f46bc58a57638a, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -321,6 +321,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6008577630093269424, guid: 3011e8639bf0b4d29ae14b21084ba12c, type: 3}
+      propertyPath: announcementDisplay
+      value: 
+      objectReference: {fileID: 1906267486}
     - target: {fileID: 6692071438255431140, guid: 3011e8639bf0b4d29ae14b21084ba12c, type: 3}
       propertyPath: m_Name
       value: LevelManager
@@ -560,6 +564,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a1f94409976e4e679bdba47801649dc, type: 3}
+--- !u!114 &1906267486 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1552837218, guid: 8a1f94409976e4e679bdba47801649dc, type: 3}
+  m_PrefabInstance: {fileID: 1901059824}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2091628959 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6595785413856471081, guid: 8a1f94409976e4e679bdba47801649dc, type: 3}
