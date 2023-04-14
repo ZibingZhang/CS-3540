@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
-    public bool levelOver;
+    public static bool levelPaused;
 
     [SerializeField] private Text announcementDisplay;
     //[SerializeField] private AudioClip winSFX;
@@ -20,7 +20,7 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        levelOver = false;
+        levelPaused = false;
         enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
         Debug.Log("Enemy count for level " + name + ": " + enemyCount);
     }
@@ -36,7 +36,7 @@ public class LevelManager : MonoBehaviour
 
     public void LevelWon()
     {
-        levelOver = true;
+        levelPaused = true;
         UpdateAnnouncement("you won :)");
         //AudioSource.PlayClipAtPoint(winSFX, Camera.main.transform.position);
         Invoke("NextLevel", 2);
@@ -44,7 +44,7 @@ public class LevelManager : MonoBehaviour
 
     public void LevelLost()
     {
-        levelOver = true;
+        levelPaused = true;
         UpdateAnnouncement("you lost :(");
         //AudioSource.PlayClipAtPoint(loseSFX, Camera.main.transform.position);
         Invoke("ResetLevel", 2);
