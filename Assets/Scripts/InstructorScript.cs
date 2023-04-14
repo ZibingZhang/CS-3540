@@ -33,7 +33,7 @@ public class InstructorScript : MonoBehaviour
         levelManager = FindObjectOfType<LevelManager>();
         panelRectTransform = textPanel.GetComponent<RectTransform>();
 
-        StartCoroutine(TypeInstructions());
+        NextSentence();
     }
 
     // Update is called once per frame
@@ -140,8 +140,8 @@ public class InstructorScript : MonoBehaviour
     }
     public void NextSentence()
     {
-        float numLines = text.ToCharArray().Length/50 * scalar;
-        numLines = Mathf.Clamp(numLines, 400, 6000);
+        float numLines = text.ToCharArray().Length / 40 * scalar;
+        numLines = Mathf.Clamp(numLines, 750, 2000);
         if (numLines == 0)
         {
             panelRectTransform.sizeDelta = new Vector2(panelRectTransform.sizeDelta.x, 0f);
