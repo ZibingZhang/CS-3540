@@ -112,8 +112,11 @@ public class LevelManager : MonoBehaviour
                 SceneManager.LoadScene("Level4 (Sky)");
                 break;
             case "Level4 (Sky)":
-                // do nothing
                 air = true;
+                SceneManager.LoadScene("FinalCutscene");
+                break;
+            case "FinalCutscene":
+                SceneManager.LoadScene("MainMenu");
                 break;
         }
     }
