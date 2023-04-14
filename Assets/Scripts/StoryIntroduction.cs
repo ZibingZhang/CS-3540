@@ -8,7 +8,6 @@ public class StoryIntroduction : MonoBehaviour
 {
     public TextMeshProUGUI storyText;
     public GameObject continueText;
-    public GameObject enemy;
     public float typingSpeed= 0.02f;
     public LevelManager levelManager;
 
@@ -21,7 +20,6 @@ public class StoryIntroduction : MonoBehaviour
     {
         text = "You are too foolish.";
         continueText.SetActive(false);
-        enemy.SetActive(false);
         NextSentence();
     }
 
@@ -76,7 +74,6 @@ public class StoryIntroduction : MonoBehaviour
                 case 8:
                     storyText.text = "";
                     levelManager.LevelWon();
-                    enemy.SetActive(true);
                     break;
             }
         }
