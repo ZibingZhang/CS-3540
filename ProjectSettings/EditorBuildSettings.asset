@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Level1 (Forest).unity
     guid: 5fd6168c264564e4ab2f424f8e32971a
   - enabled: 1
+    path: Assets/Scenes/Level2Cutscene.unity
+    guid: 37c638b1dca164c69afd5f9b412f4cff
+  - enabled: 1
     path: Assets/Scenes/Level2 (Volcano).unity
     guid: d4564e684121a46fea256127fc2101d1
   - enabled: 1

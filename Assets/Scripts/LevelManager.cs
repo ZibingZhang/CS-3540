@@ -93,6 +93,10 @@ public class LevelManager : MonoBehaviour
                 break;
             case "Level1 (Forest)":
                 earth = true;
+                SceneManager.LoadScene("Level2Cutscene");
+                break;
+            case "Level2Cutscene":
+                earth = true;
                 SceneManager.LoadScene("Level2 (Volcano)");
                 break;
             case "Level2 (Volcano)":
