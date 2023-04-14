@@ -75,7 +75,7 @@ public class StoryIntroduction : MonoBehaviour
                     break;
                 case 8:
                     storyText.text = "";
-                    levelManager.PlayLevel();
+                    levelManager.LevelWon();
                     enemy.SetActive(true);
                     break;
             }
