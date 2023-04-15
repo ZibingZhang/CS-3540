@@ -117,6 +117,8 @@ public class LevelManager : MonoBehaviour
                 break;
             case "FinalCutscene":
                 SceneManager.LoadScene("MainMenu");
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
                 break;
         }
     }

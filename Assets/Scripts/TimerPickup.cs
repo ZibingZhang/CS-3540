@@ -33,7 +33,7 @@ public class TimerPickup : MonoBehaviour
         timerWheel1.fillAmount = currentTime / maxTime;
         timerWheel2.fillAmount = currentTime / maxTime;
 
-        if (currentTime >= maxTime && active)
+        if (currentTime >= maxTime && active && !LevelManager.levelPaused)
         {
             player.GetComponent<Health>().TakeDamage(subtractedHealth);
             AudioSource.PlayClipAtPoint(denotateSFX, Camera.main.transform.position);
