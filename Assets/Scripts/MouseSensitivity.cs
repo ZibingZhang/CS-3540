@@ -6,11 +6,19 @@ using UnityEngine.UI;
 public class MouseSensitivity : MonoBehaviour
 {
 
-    public Slider sensitivitySlider;
+    private static string mouseSensitivity = "mouseSensitivity";
 
-    void SubmitSliderSetting()
+    public static float ms
     {
-        MouseLook.mouseSensitivity = sensitivitySlider.value;
+        get
+        {
+            return PlayerPrefs.GetFloat(mouseSensitivity, 1);
+        }
+        set
+        {
+            PlayerPrefs.SetFloat(mouseSensitivity, value);
+        }
+
     }
 
 }

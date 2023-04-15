@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MouseLook : MonoBehaviour
 {
-    public static float mouseSensitivity = 10;
+    //public static float mouseSensitivity = 5;
     public Slider sensitivitySlider;
 
     float pitch = 0;
@@ -23,10 +23,11 @@ public class MouseLook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (!LevelManager.levelPaused)
         {
-            float moveX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-            float moveY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+            float moveX = Input.GetAxis("Mouse X") * MouseSensitivity.ms * Time.deltaTime;
+            float moveY = Input.GetAxis("Mouse Y") * MouseSensitivity.ms * Time.deltaTime;
 
             // yaw
             playerBody.Rotate(Vector3.up * moveX);
@@ -39,9 +40,11 @@ public class MouseLook : MonoBehaviour
         }
     }
 
+    /*
     void SubmitSliderSetting()
     {
         mouseSensitivity = sensitivitySlider.value;
     }
+    */
 
 }
