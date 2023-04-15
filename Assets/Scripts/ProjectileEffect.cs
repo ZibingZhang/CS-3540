@@ -20,6 +20,9 @@ public class ProjectileEffect : MonoBehaviour
     public int waterTimeSpecial = 5;
     public GameObject frostImage = null;
 
+    public int airKnockback = 100;
+    public int airKnockbackSpecial = 200;
+
     void Start()
     {
         frostImage.SetActive(false);
@@ -33,11 +36,13 @@ public class ProjectileEffect : MonoBehaviour
 
     public void AssignEffect(string name, Collider projectile)
     {
+        Vector3 back = projectile.transform.position.normalized;
+
         if (name.Contains("Special"))
         {
             if(name.Contains("Earth"))
             {
-                StartCoroutine(KnockBack(projectile, earthKnockbackSpecial));
+                StartCoroutine(KnockBack(projectile, earthKnockbackSpecial, back));
             }
             else if (name.Contains("Fire"))
             {
@@ -50,14 +55,14 @@ public class ProjectileEffect : MonoBehaviour
             //air
             else
             {
-
+                StartCoroutine(KnockBack(projectile, airKnockbackSpecial, Vector3.up));
             }   
         }
         else
         {
             if (name.Contains("Earth"))
             {
-                StartCoroutine(KnockBack(projectile, earthKnockback));
+                StartCoroutine(KnockBack(projectile, earthKnockback, back));
             }
             else if (name.Contains("Fire"))
             {
@@ -70,10 +75,12 @@ public class ProjectileEffect : MonoBehaviour
             //air
             else
             {
-
+                StartCoroutine(KnockBack(projectile, airKnockback, Vector3.up));
             }
         }
     }
+
+   
 
     IEnumerator Freeze(Collider projectile, int duration)
     {
@@ -93,10 +100,10 @@ public class ProjectileEffect : MonoBehaviour
         }
     }
 
-    IEnumerator KnockBack(Collider projectile, int amt)
+    IEnumerator KnockBack(Collider projectile, int amt, Vector3 direction)
     {
         Rigidbody rb = gameObject.GetComponent<Rigidbody>();
-        Vector3 direction = projectile.transform.position.normalized;
+        //Vector3 direction = projectile.transform.position.normalized;
         print(direction);
         //direction = Vector3.back;
         if (gameObject.CompareTag("Player"))
