@@ -2006,8 +2006,39 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8584051896170890263, guid: 4ee2c041478c3154ebe14e18c0e2c572, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8584051896318413248, guid: 4ee2c041478c3154ebe14e18c0e2c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1503614554}
+    - target: {fileID: 8584051896318413248, guid: 4ee2c041478c3154ebe14e18c0e2c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadMainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 8584051896328023852, guid: 4ee2c041478c3154ebe14e18c0e2c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1503614554}
+    - target: {fileID: 8584051896328023852, guid: 4ee2c041478c3154ebe14e18c0e2c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResumeGame
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ee2c041478c3154ebe14e18c0e2c572, type: 3}
+--- !u!114 &1503614554 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8584051896170890265, guid: 4ee2c041478c3154ebe14e18c0e2c572, type: 3}
+  m_PrefabInstance: {fileID: 1503614553}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5d8be2670d92eb48bce82b05a8a8378, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1547448868
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2363,6 +2394,10 @@ PrefabInstance:
     - target: {fileID: 559635115376690878, guid: 8a1f94409976e4e679bdba47801649dc, type: 3}
       propertyPath: m_MaxValue
       value: 125
+      objectReference: {fileID: 0}
+    - target: {fileID: 559635116533748930, guid: 8a1f94409976e4e679bdba47801649dc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 559635116533748931, guid: 8a1f94409976e4e679bdba47801649dc, type: 3}
       propertyPath: m_Pivot.x

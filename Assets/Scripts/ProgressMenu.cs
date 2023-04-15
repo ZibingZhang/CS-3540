@@ -11,6 +11,11 @@ public class ProgressMenu : MonoBehaviour
     public GameObject water;
     public GameObject air;
 
+    void start()
+    {
+
+    }
+
     public void EarthLevel()
     {
         SceneManager.LoadScene("Level1 (Forest)");

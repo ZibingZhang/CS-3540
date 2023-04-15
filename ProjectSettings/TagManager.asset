@@ -16,6 +16,7 @@ TagManager:
   - WanderPoint
   - Eyes
   - Instructions
+  - Button
   layers:
   - Default
   - TransparentFX
