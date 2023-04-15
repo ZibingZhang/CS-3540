@@ -91,12 +91,21 @@ public class InstructorScript : MonoBehaviour
                     if (Input.GetKeyDown(KeyCode.Mouse0))
                     {
                         step++;
-                        text = "That's everything! Defeat the enemy across the arena from you to continue into the actual game. The enemy's health bar is on the top right, in red. The other health bar is your own. Don't let your own health reach zero!";
+                        text = "You can pause the game by pressing the 'esc' key. You can press 'esc' or 'Resume' to return back to the game. Try it now.";
 
                         NextSentence();
                     }
                     break;
                 case 6:
+                    if (Input.GetKeyDown(KeyCode.Escape))
+                    {
+                        step++;
+                        text = "That's everything! Defeat the enemy across the arena from you to continue into the actual game. The enemy's health bar is on the top right, in red. The other health bar is your own. Don't let your own health reach zero!";
+
+                        NextSentence();
+                    }
+                    break;
+                case 7:
                     if (enemyHealth.currentHealth <= 0)
                     {
                         levelManager.LevelWon();
