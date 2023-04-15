@@ -3048,17 +3048,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c0988e417453bc4cb34b966cf0c68cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
+
   earth: {fileID: 292401098}
   fire: {fileID: 25981958}
   water: {fileID: 383893323}
   air: {fileID: 678512395}
-=======
-  earth: {fileID: 0}
-  fire: {fileID: 0}
-  water: {fileID: 0}
-  air: {fileID: 0}
->>>>>>> 625a0d46065a51c0a74acb51d17bbf77f2f414aa
 --- !u!1 &1140273940
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,6 +18,7 @@ public class MouseSensitivity : MonoBehaviour
         {
             PlayerPrefs.SetFloat(mouseSensitivity, value);
         }
+
     }
 
 }
