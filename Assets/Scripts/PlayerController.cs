@@ -25,7 +25,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        
+        if (!LevelManager.levelPaused)
+        {
             // Player movement controls: WASD and arrow keys
             float moveHorizontal = Input.GetAxis("Horizontal");
             float moveVertical = Input.GetAxis("Vertical");
@@ -69,10 +70,12 @@ public class PlayerController : MonoBehaviour
                 moveDirection = Vector3.Lerp(moveDirection, input, Time.deltaTime * airControl);
             }
 
-            // apply gravity to direction, move player
-            moveDirection.y -= gravity * Time.deltaTime;
-            controller.Move(input * Time.deltaTime);
+        }
         
+        // apply gravity to direction, move player
+        moveDirection.y -= gravity * Time.deltaTime;
+        controller.Move(input * Time.deltaTime);
+    
     }
 
     void LateUpdate()

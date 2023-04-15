@@ -72,7 +72,7 @@ public class Health : MonoBehaviour
     {
         if (currentHealth < 100)
         {
-            currentHealth += amount;
+            currentHealth = Mathf.Clamp(currentHealth + amount, 0, 100);
             healthSlider.value = Mathf.Clamp(currentHealth, 0, 100);
             healthText.text = currentHealth + " / " + startingHealth;
         }

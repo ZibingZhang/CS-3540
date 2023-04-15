@@ -85,26 +85,29 @@ public class ThrowProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (!LevelManager.levelPaused)
         {
-            SwitchElement();
+            if (Input.GetKeyDown(KeyCode.Z))
+            {
+                SwitchElement();
+            }
+
+            if (Input.GetButtonDown("Fire1") && elapsedTimeAttack >= attackRefreshRate)
+            {
+                FireProjectile(currentProjectile, projectileSpeed);
+                elapsedTimeAttack = 0f;
+            } 
+            else if (Input.GetButtonDown("Fire2") && elapsedTimeSpecial >= specialRefreshRate)
+            {
+                FireProjectile(currentSpecial, specialSpeed);
+                elapsedTimeSpecial = 0f;
+            }
+
+            elapsedTimeAttack += Time.deltaTime;
+            elapsedTimeSpecial += Time.deltaTime;
+
+            UpdateRefreshUI();
         }
-
-        if (Input.GetButtonDown("Fire1") && elapsedTimeAttack >= attackRefreshRate)
-        {
-            FireProjectile(currentProjectile, projectileSpeed);
-            elapsedTimeAttack = 0f;
-        } 
-        else if (Input.GetButtonDown("Fire2") && elapsedTimeSpecial >= specialRefreshRate)
-        {
-            FireProjectile(currentSpecial, specialSpeed);
-            elapsedTimeSpecial = 0f;
-        }
-
-        elapsedTimeAttack += Time.deltaTime;
-        elapsedTimeSpecial += Time.deltaTime;
-
-        UpdateRefreshUI();
 
     }
     void SetElementObjects(Element element)

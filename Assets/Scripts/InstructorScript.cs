@@ -17,6 +17,7 @@ public class InstructorScript : MonoBehaviour
     private string text = "";
     private RectTransform panelRectTransform;
     private LevelManager levelManager;
+    private bool typing;
 
     private int step = 0;
 
@@ -39,67 +40,70 @@ public class InstructorScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        switch(step)
+        if (!typing)
         {
-            case 0:
-                if (IsPlayerInFOV())
-                {
-                    step++;
-                    text = "You can also use the spacebar to jump!";
-                    NextSentence();
-                }
-                break;
-            case 1:
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    step++;
-                    text = "Your task is to defeat the opponent in each level. Press left click to attack. Your attacks have a cooldown. You can see cooldowns on the bottom left.";
+            switch(step)
+            {
+                case 0:
+                    if (IsPlayerInFOV())
+                    {
+                        step++;
+                        text = "You can also use the spacebar to jump!";
+                        NextSentence();
+                    }
+                    break;
+                case 1:
+                    if (Input.GetKeyDown(KeyCode.Space))
+                    {
+                        step++;
+                        text = "Your task is to defeat the opponent in each level. Press left click to attack. Your attacks have a cooldown. You can see cooldowns on the bottom left.";
 
-                    NextSentence();
-                }
-                break;
-            case 2:
-                if (Input.GetKeyDown(KeyCode.Mouse0))
-                {
-                    step++;
-                    text = "Press right click to special attack. These attacks have a longer cooldown.";
+                        NextSentence();
+                    }
+                    break;
+                case 2:
+                    if (Input.GetKeyDown(KeyCode.Mouse0))
+                    {
+                        step++;
+                        text = "Press right click to special attack. These attacks have a longer cooldown.";
 
-                    NextSentence();
-                }
-                break;
-            case 3:
-                if (Input.GetKeyDown(KeyCode.Mouse1))
-                {
-                    step++;
-                    text = "You can use multiple different elements. Press 'z' to switch elements. You can see which element you are using in the bottom panel.";
+                        NextSentence();
+                    }
+                    break;
+                case 3:
+                    if (Input.GetKeyDown(KeyCode.Mouse1))
+                    {
+                        step++;
+                        text = "You can use multiple different elements. Press 'z' to switch elements. You can see which element you are using in the bottom panel.";
 
-                    NextSentence();                }
-                break;
-            case 4:
-                if (Input.GetKeyDown(KeyCode.Z))
-                {
-                    step++;
-                    text = "Each element has a different effect. Now attack with the new element.";
+                        NextSentence();                }
+                    break;
+                case 4:
+                    if (Input.GetKeyDown(KeyCode.Z))
+                    {
+                        step++;
+                        text = "Each element has a different effect. Now attack with the new element.";
 
-                    NextSentence();
-                }
-                break;
-            case 5:
-                if (Input.GetKeyDown(KeyCode.Mouse0))
-                {
-                    step++;
-                    text = "That's everything! Defeat the enemy across the arena from you to continue into the actual game. The enemy's health bar is on the top right, in red. The other health bar is your own. Don't let your own health reach zero!";
+                        NextSentence();
+                    }
+                    break;
+                case 5:
+                    if (Input.GetKeyDown(KeyCode.Mouse0))
+                    {
+                        step++;
+                        text = "That's everything! Defeat the enemy across the arena from you to continue into the actual game. The enemy's health bar is on the top right, in red. The other health bar is your own. Don't let your own health reach zero!";
 
-                    NextSentence();
-                }
-                break;
-            case 6:
-                if (enemyHealth.currentHealth <= 0)
-                {
-                    levelManager.LevelWon();
-                }
-                break;
-        }
+                        NextSentence();
+                    }
+                    break;
+                case 6:
+                    if (enemyHealth.currentHealth <= 0)
+                    {
+                        levelManager.LevelWon();
+                    }
+                    break;
+            }
+        }   
     }
 
     private void OnDrawGizmos()
@@ -131,6 +135,7 @@ public class InstructorScript : MonoBehaviour
     }
     IEnumerator TypeInstructions()
     {
+        typing = true;
         float speed = player.GetComponent<PlayerController>().moveSpeed;
         player.GetComponent<PlayerController>().moveSpeed = 0;
         foreach (char letter in text.ToCharArray())
@@ -139,6 +144,7 @@ public class InstructorScript : MonoBehaviour
             yield return new WaitForSeconds(typingSpeed);
         }
         player.GetComponent<PlayerController>().moveSpeed = speed;
+        typing = false;
     }
     public void NextSentence()
     {

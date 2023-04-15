@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
-    public bool levelOver;
+    public static bool levelPaused;
 
     [SerializeField] private Text announcementDisplay;
     //[SerializeField] private AudioClip winSFX;
@@ -20,7 +20,7 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        levelOver = false;
+        levelPaused = false;
         enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
         Debug.Log("Enemy count for level " + name + ": " + enemyCount);
     }
@@ -36,7 +36,7 @@ public class LevelManager : MonoBehaviour
 
     public void LevelWon()
     {
-        levelOver = true;
+        levelPaused = true;
         UpdateAnnouncement("you won :)");
         //AudioSource.PlayClipAtPoint(winSFX, Camera.main.transform.position);
         Invoke("NextLevel", 2);
@@ -44,7 +44,7 @@ public class LevelManager : MonoBehaviour
 
     public void LevelLost()
     {
-        levelOver = true;
+        levelPaused = true;
         UpdateAnnouncement("you lost :(");
         //AudioSource.PlayClipAtPoint(loseSFX, Camera.main.transform.position);
         Invoke("ResetLevel", 2);
@@ -78,30 +78,45 @@ public class LevelManager : MonoBehaviour
         announcementDisplay.text = message;
     }
 
-    private void NextLevel()
+    public void NextLevel()
     {
         string currentSceneName = SceneManager.GetActiveScene().name;
         Debug.Log("Next level, current scene name: " + currentSceneName);
         switch (currentSceneName)
         {
             case "Level0 (Tutorial)":
+                SceneManager.LoadScene("Level1Cutscene");
+                break;
+            case "Level1Cutscene":
                 SceneManager.LoadScene("Level1 (Forest)");
                 break;
             case "Level1 (Forest)":
                 earth = true;
+                SceneManager.LoadScene("Level2Cutscene");
+                break;
+            case "Level2Cutscene":
                 SceneManager.LoadScene("Level2 (Volcano)");
                 break;
             case "Level2 (Volcano)":
                 fire = true;
+                SceneManager.LoadScene("Level3Cutscene");
+                break;
+            case "Level3Cutscene":
                 SceneManager.LoadScene("Level3 (Ice)");
                 break;
             case "Level3 (Ice)":
                 water = true;
+                SceneManager.LoadScene("Level4Cutscene");
+                break;
+            case "Level4Cutscene":
                 SceneManager.LoadScene("Level4 (Sky)");
                 break;
             case "Level4 (Sky)":
-                // do nothing
                 air = true;
+                SceneManager.LoadScene("FinalCutscene");
+                break;
+            case "FinalCutscene":
+                SceneManager.LoadScene("MainMenu");
                 break;
         }
     }
