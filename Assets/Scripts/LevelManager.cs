@@ -39,7 +39,7 @@ public class LevelManager : MonoBehaviour
         levelPaused = true;
         UpdateAnnouncement("you won :)");
         //AudioSource.PlayClipAtPoint(winSFX, Camera.main.transform.position);
-        Invoke("NextLevel", 2);
+        Invoke("NextLevel", 5);
     }
 
     public void LevelLost()
@@ -92,6 +92,7 @@ public class LevelManager : MonoBehaviour
                 break;
             case "Level1 (Forest)":
                 earth = true;
+                PlayerPrefs.SetString("CurrentProgress", "Earth");
                 SceneManager.LoadScene("Level2Cutscene");
                 break;
             case "Level2Cutscene":
@@ -99,6 +100,8 @@ public class LevelManager : MonoBehaviour
                 break;
             case "Level2 (Volcano)":
                 fire = true;
+                PlayerPrefs.SetString("CurrentProgress", "Fire");
+
                 SceneManager.LoadScene("Level3Cutscene");
                 break;
             case "Level3Cutscene":
@@ -106,6 +109,8 @@ public class LevelManager : MonoBehaviour
                 break;
             case "Level3 (Ice)":
                 water = true;
+                PlayerPrefs.SetString("CurrentProgress", "Water");
+
                 SceneManager.LoadScene("Level4Cutscene");
                 break;
             case "Level4Cutscene":
@@ -113,6 +118,8 @@ public class LevelManager : MonoBehaviour
                 break;
             case "Level4 (Sky)":
                 air = true;
+                PlayerPrefs.SetString("CurrentProgress", "Air");
+
                 SceneManager.LoadScene("FinalCutscene");
                 break;
             case "FinalCutscene":

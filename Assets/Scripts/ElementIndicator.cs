@@ -7,10 +7,10 @@ public class ElementIndicator : MonoBehaviour
 {
     public enum Element
     {
-        Water,
+        Air,
         Earth,
         Fire,
-        Air
+        Water
     }
     public Element currentElement;
     public Image fireImage;

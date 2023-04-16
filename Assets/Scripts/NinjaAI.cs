@@ -21,7 +21,7 @@ public class NinjaAI : MonoBehaviour
         Damage,
         Dead
     }
-    public FSMStates currentState;
+    public static FSMStates currentState;
 
     Animator anim;
 
@@ -83,6 +83,10 @@ public class NinjaAI : MonoBehaviour
                 UpdateKickState();
                 break;
 
+            case FSMStates.Damage:
+                UpdateDamageState();
+                break;
+
             case FSMStates.Dead:
                 UpdateDeadState();
                 break;
@@ -91,9 +95,6 @@ public class NinjaAI : MonoBehaviour
     }
     void UpdateRunState()
     {
-        // print(target);
-        //print(target);
-        //print(Vector3.Distance(transform.position, target));
         if (Vector3.Distance(transform.position, target) < 3)
         {
             hasShot = false;
@@ -148,10 +149,16 @@ public class NinjaAI : MonoBehaviour
     {
 
     }
+    void UpdateDamageState()
+    {
+        print("setting animation");
+        anim.SetInteger("animState", -1);
+        Invoke("GoToRunState", 3);
+    }
 
     void UpdateDeadState()
     {
-
+        anim.SetInteger("animState", -10);
     }
 
     private void getRandomDestination()

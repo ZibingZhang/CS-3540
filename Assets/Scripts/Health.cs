@@ -26,6 +26,10 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int damageAmount)
     {
+        if(gameObject.tag == "Enemy")
+        {
+            NinjaAI.currentState = NinjaAI.FSMStates.Damage;
+        }
         //Debug.Log(name + " taken damage " + damageAmount);
         if (currentHealth > 0 && !LevelManager.levelPaused)
         {
@@ -36,7 +40,21 @@ public class Health : MonoBehaviour
         }
         if (currentHealth <= 0)
         {
-            Dies();
+            if (gameObject.tag == "Enemy")
+            {
+                NinjaAI.currentState = NinjaAI.FSMStates.Dead;
+                levelManager.EnemyDied();
+            }
+            else if (gameObject.tag == "Player")
+            {
+                var controller = gameObject.GetComponent<PlayerController>();
+
+                if (!LevelManager.levelPaused)
+                {
+                    controller.PlayAudioClip(dieSFX);
+                }
+                levelManager.LevelLost();
+            }
         } 
         else 
         {
@@ -47,31 +65,6 @@ public class Health : MonoBehaviour
             }
         }
     }
-
-    void Dies()
-    {
-        if (gameObject.tag == "Player")
-        {
-            var controller = gameObject.GetComponent<PlayerController>();
-
-            if (!LevelManager.levelPaused)
-            {
-                controller.PlayAudioClip(dieSFX);
-            }
-            levelManager.LevelLost();
-        }
-        else
-        {
-            Debug.Log(name + " dies");
-            Destroy(gameObject);
-
-            if (gameObject.tag == "Enemy")
-            {
-                levelManager.EnemyDied();
-            }
-        }
-    }
-
     public void GainHealth(int amount)
     {
         if (currentHealth < 100)
