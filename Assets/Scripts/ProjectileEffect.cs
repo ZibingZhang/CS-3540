@@ -72,7 +72,6 @@ public class ProjectileEffect : MonoBehaviour
             {
                 StartCoroutine(Freeze(projectile, waterTime));
             }
-            //air
             else
             {
                 StartCoroutine(KnockBack(projectile, airKnockback, Vector3.up));
