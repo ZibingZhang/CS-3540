@@ -208,70 +208,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   storyText: {fileID: 2091628959}
   continueText: {fileID: 194225205}
-  pickup: {fileID: 1241405783}
+  pickup: {fileID: 8824187622705830343, guid: 6f1ff6af8a7e943c28de10c01ea40aab, type: 3}
   typingSpeed: 0.03
   levelManager: {fileID: 207714114}
---- !u!1001 &722039000
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 8824187622705830339, guid: 6f1ff6af8a7e943c28de10c01ea40aab, type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8824187622705830339, guid: 6f1ff6af8a7e943c28de10c01ea40aab, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8824187622705830339, guid: 6f1ff6af8a7e943c28de10c01ea40aab, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8824187622705830339, guid: 6f1ff6af8a7e943c28de10c01ea40aab, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8824187622705830339, guid: 6f1ff6af8a7e943c28de10c01ea40aab, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -7.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8824187622705830339, guid: 6f1ff6af8a7e943c28de10c01ea40aab, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 8824187622705830339, guid: 6f1ff6af8a7e943c28de10c01ea40aab, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8824187622705830339, guid: 6f1ff6af8a7e943c28de10c01ea40aab, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8824187622705830339, guid: 6f1ff6af8a7e943c28de10c01ea40aab, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 8824187622705830339, guid: 6f1ff6af8a7e943c28de10c01ea40aab, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8824187622705830339, guid: 6f1ff6af8a7e943c28de10c01ea40aab, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8824187622705830339, guid: 6f1ff6af8a7e943c28de10c01ea40aab, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 8824187622705830343, guid: 6f1ff6af8a7e943c28de10c01ea40aab, type: 3}
-      propertyPath: m_Name
-      value: TimerPickup
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6f1ff6af8a7e943c28de10c01ea40aab, type: 3}
 --- !u!1 &956204400
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,24 +382,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3011e8639bf0b4d29ae14b21084ba12c, type: 3}
---- !u!1 &1241405783 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8824187622705830343, guid: 6f1ff6af8a7e943c28de10c01ea40aab, type: 3}
-  m_PrefabInstance: {fileID: 722039000}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1241405790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1241405783}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85ad67772e0103a4da5d2120fcee32e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyDuration: 10
 --- !u!1 &1554440857
 GameObject:
   m_ObjectHideFlags: 0
