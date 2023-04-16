@@ -27,7 +27,7 @@ public class Health : MonoBehaviour
     public void TakeDamage(int damageAmount)
     {
         //Debug.Log(name + " taken damage " + damageAmount);
-        if (currentHealth > 0)
+        if (currentHealth > 0 && !LevelManager.levelPaused)
         {
             currentHealth -= damageAmount;
             healthSlider.value = Mathf.Clamp(currentHealth, 0, 100);
@@ -40,7 +40,7 @@ public class Health : MonoBehaviour
         } 
         else 
         {
-            if (gameObject.tag == "Player")
+            if (gameObject.tag == "Player" && !LevelManager.levelPaused)
             {
                 var controller = gameObject.GetComponent<PlayerController>();
                 controller.PlayAudioClip(hurtSFX);
@@ -53,7 +53,11 @@ public class Health : MonoBehaviour
         if (gameObject.tag == "Player")
         {
             var controller = gameObject.GetComponent<PlayerController>();
-            controller.PlayAudioClip(dieSFX);
+
+            if (!LevelManager.levelPaused)
+            {
+                controller.PlayAudioClip(dieSFX);
+            }
             levelManager.LevelLost();
         }
         else
