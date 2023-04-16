@@ -50,7 +50,8 @@ public class TimerPickupIntroduction : MonoBehaviour
                 case 3:
                     step++;
                     text = "If you see one of these, you should reach it before time runs out.";
-                    pickup.SetActive(true);
+                    GameObject timerPickup = Instantiate(pickup, new Vector3(0,1.5f,-7.19999981f), Quaternion.Euler(0, 0, 90)) as GameObject;
+                    timerPickup.SetActive(true);
                     NextSentence();
                     break;
                 case 4:
