@@ -103,7 +103,6 @@ public class ProjectileEffect : MonoBehaviour
     {
         Rigidbody rb = gameObject.GetComponent<Rigidbody>();
         //Vector3 direction = projectile.transform.position.normalized;
-        print(direction);
         //direction = Vector3.back;
         if (gameObject.CompareTag("Player"))
         {

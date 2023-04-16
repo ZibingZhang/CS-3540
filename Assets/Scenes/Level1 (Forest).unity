@@ -4865,13 +4865,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8471487253590215887, guid: 4ee2c041478c3154ebe14e18c0e2c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8471487253590215887, guid: 4ee2c041478c3154ebe14e18c0e2c572, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8584051896170890258, guid: 4ee2c041478c3154ebe14e18c0e2c572, type: 3}
       propertyPath: m_Name
       value: PauseMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 8584051896170890258, guid: 4ee2c041478c3154ebe14e18c0e2c572, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8584051896170890262, guid: 4ee2c041478c3154ebe14e18c0e2c572, type: 3}
       propertyPath: m_Pivot.x
@@ -4956,10 +4960,6 @@ PrefabInstance:
     - target: {fileID: 8584051896170890262, guid: 4ee2c041478c3154ebe14e18c0e2c572, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8584051896170890263, guid: 4ee2c041478c3154ebe14e18c0e2c572, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ee2c041478c3154ebe14e18c0e2c572, type: 3}

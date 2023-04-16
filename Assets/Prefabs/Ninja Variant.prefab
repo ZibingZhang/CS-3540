@@ -123,25 +123,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d41c2ae4b2772846b46b15cfa6df9eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 1519322442116508, guid: fa331b8213914f44cab65156c1ba366e, type: 3}
-  stillTime: 3
-  enemySpeed: 5
-  currentState: 0
---- !u!114 &299062824605003393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6186935853910114423}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 707b9504abbb4402084b86fe4c1892b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 4033555839509222781, guid: 1017e22a3a33c4cf282ffa08b2a748bf, type: 3}
-  frequency: 5
-  erraticness: 10
+  attackProjectilePrefab: {fileID: 0}
+  specialProjectilePrefab: {fileID: 0}
+  percentAttack: 0.5
   stillTime: 3
   enemySpeed: 5
   currentState: 0
@@ -157,6 +141,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da30d3fd0c9091649989051838f96a68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  earthKnockback: 100
+  earthKnockbackSpecial: 200
+  fireTime: 4
+  fireDamage: 2
+  fireTimeSpecial: 8
+  fireDamageSpecial: 2
+  waterTime: 3
+  waterTimeSpecial: 4
+  frostImage: {fileID: 0}
+  airKnockback: 100
+  airKnockbackSpecial: 200
 --- !u!114 &2669843982091489681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,3 +182,4 @@ MonoBehaviour:
   healthText: {fileID: 0}
   hurtSFX: {fileID: 8300000, guid: b625f1450cd9c4ce2b81dd1e897fc0a4, type: 3}
   dieSFX: {fileID: 8300000, guid: 27db08b8818004194b7623ef2c365991, type: 3}
+  currentHealth: 0
