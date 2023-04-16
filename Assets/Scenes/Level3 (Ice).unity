@@ -390,9 +390,17 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7990386575545360061, guid: 3718a43bce5cc1942a31eb5f5f959c18, type: 3}
+      propertyPath: waterTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7990386575545360061, guid: 3718a43bce5cc1942a31eb5f5f959c18, type: 3}
       propertyPath: frostImage
       value: 
       objectReference: {fileID: 2121539277}
+    - target: {fileID: 7990386575545360061, guid: 3718a43bce5cc1942a31eb5f5f959c18, type: 3}
+      propertyPath: waterTimeSpecial
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3718a43bce5cc1942a31eb5f5f959c18, type: 3}
 --- !u!1 &201544933 stripped

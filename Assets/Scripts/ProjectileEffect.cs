@@ -11,13 +11,13 @@ public class ProjectileEffect : MonoBehaviour
     public int earthKnockback = 100;
     public int earthKnockbackSpecial = 200;
 
-    public int fireTime = 5;
+    public int fireTime = 4;
     public int fireDamage = 2;
     public int fireTimeSpecial = 8;
-    public int fireDamageSpecial = 5;
+    public int fireDamageSpecial = 2;
 
     public int waterTime = 3;
-    public int waterTimeSpecial = 5;
+    public int waterTimeSpecial = 4;
     public GameObject frostImage = null;
 
     public int airKnockback = 100;
@@ -48,7 +48,7 @@ public class ProjectileEffect : MonoBehaviour
             {
                 StartCoroutine(DamageOverTime(fireTimeSpecial, fireDamageSpecial));
             }
-            else if (name.Contains("Water"))
+            else if (name.Contains("Water") || name.Contains("Snow"))
             {
                 StartCoroutine(Freeze(projectile, waterTimeSpecial));
             }
@@ -68,7 +68,7 @@ public class ProjectileEffect : MonoBehaviour
             {
                 StartCoroutine(DamageOverTime(fireTime, fireDamage));
             }
-            else if (name.Contains("Water"))
+            else if (name.Contains("Water") || name.Contains("Snow"))
             {
                 StartCoroutine(Freeze(projectile, waterTime));
             }

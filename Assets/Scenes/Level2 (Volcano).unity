@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.13036436, g: 0.0948469, b: 0.12510028, a: 1}
+  m_IndirectSpecularColor: {r: 0.1301046, g: 0.09556649, b: 0.12508947, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1127,9 +1127,17 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7990386575545360061, guid: 3718a43bce5cc1942a31eb5f5f959c18, type: 3}
+      propertyPath: fireTime
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7990386575545360061, guid: 3718a43bce5cc1942a31eb5f5f959c18, type: 3}
       propertyPath: frostImage
       value: 
       objectReference: {fileID: 1904027386}
+    - target: {fileID: 7990386575545360061, guid: 3718a43bce5cc1942a31eb5f5f959c18, type: 3}
+      propertyPath: fireDamageSpecial
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3718a43bce5cc1942a31eb5f5f959c18, type: 3}
 --- !u!1 &314814721 stripped
