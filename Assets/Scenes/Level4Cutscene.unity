@@ -158,7 +158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   storyText: {fileID: 2091628959}
   continueText: {fileID: 194225205}
-  pickup: {fileID: 8824187622705830343, guid: 6f1ff6af8a7e943c28de10c01ea40aab, type: 3}
+  pickup: {fileID: 8824187622705830343, guid: 4b1e1f510a5fa4dad91266551ad087c0, type: 3}
   typingSpeed: 0.03
   levelManager: {fileID: 207714114}
 --- !u!114 &207714121

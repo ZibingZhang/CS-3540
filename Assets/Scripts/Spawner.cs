@@ -39,6 +39,7 @@ public class Spawner : MonoBehaviour
         position = origin + randomPosition;
 
         GameObject spawnedObj = Instantiate(obj, position, transform.rotation) as GameObject;
+        spawnedObj.SetActive(true);
         spawnedObj.transform.parent = GameObject.FindGameObjectWithTag("ProjectileParent").transform;
     }
 }
