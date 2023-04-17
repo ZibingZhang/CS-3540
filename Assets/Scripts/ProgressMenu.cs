@@ -42,21 +42,25 @@ public class ProgressMenu : MonoBehaviour
     public void EarthLevel()
     {
         SceneManager.LoadScene("Level1 (Forest)");
+        PlayerPrefs.SetInt("CurrentProgress", 1);
     }
 
     public void FireLevel()
     {
         SceneManager.LoadScene("Level2 (Volcano)");
+        PlayerPrefs.SetInt("CurrentProgress", 2);
     }
 
     public void WaterLevel()
     {
         SceneManager.LoadScene("Level3 (Ice)");
+        PlayerPrefs.SetInt("CurrentProgress", 3);
     }
 
     public void AirLevel()
     {
         SceneManager.LoadScene("Level4 (Sky)");
+        PlayerPrefs.SetInt("CurrentProgress", 4);
     }
 
 }
