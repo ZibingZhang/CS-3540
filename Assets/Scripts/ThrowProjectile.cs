@@ -50,6 +50,8 @@ public class ThrowProjectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentElement = Element.Air;
+
         elapsedTimeAttack = (float)attackRefreshRate;
         elapsedTimeSpecial = (float)specialRefreshRate;
 

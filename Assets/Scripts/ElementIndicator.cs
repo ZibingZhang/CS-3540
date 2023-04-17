@@ -79,7 +79,6 @@ public class ElementIndicator : MonoBehaviour
         highlightedImage.color = currColor;
 
         previousImage = highlightedImage;
-
     }
     private void SetElementTransparency(Image image)
     {
