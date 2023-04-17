@@ -65,4 +65,9 @@ public class PauseMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void SetProgress0()
+    {
+        PlayerPrefs.SetInt("CurrentProgress", 0);
+    }
 }

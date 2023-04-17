@@ -19,7 +19,7 @@ public class LevelManager : MonoBehaviour
     {
         levelPaused = false;
         enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
-        Debug.Log("Enemy count for level " + name + ": " + enemyCount);
+        // Debug.Log("Enemy count for level " + name + ": " + enemyCount);
         PlayerPrefs.SetInt("CurrentProgress", progressIndex);
     }
 

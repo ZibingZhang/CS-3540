@@ -158,9 +158,9 @@ public class InstructorScript : MonoBehaviour
     public void NextSentence()
     {
         float numLines = Mathf.Ceil(text.ToCharArray().Length/40) * scalar;
-        print(numLines);
+        // print(numLines);
         numLines = Mathf.Clamp(numLines, 750, 2000);
-        print("after clamp" + numLines);
+        // print("after clamp" + numLines);
         if (numLines == 0)
         {
             panelRectTransform.sizeDelta = new Vector2(panelRectTransform.sizeDelta.x, 0f);

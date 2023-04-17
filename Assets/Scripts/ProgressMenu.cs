@@ -21,7 +21,12 @@ public class ProgressMenu : MonoBehaviour
         elementList = new GameObject[4] { earth, fire, water, air };
         progress = PlayerPrefs.GetInt("CurrentProgress");
         currentMaxProgress = PlayerPrefs.GetInt("MaxProgress", 0);
-        PlayerPrefs.SetInt("MaxProgress", Mathf.Max(progress, currentMaxProgress));
+
+        if (!(progress > 4))
+        {
+            PlayerPrefs.SetInt("MaxProgress", Mathf.Max(progress, currentMaxProgress));
+        }
+
         maxProgress = PlayerPrefs.GetInt("MaxProgress");
 
         for (int i = 0; i < 4; i++)

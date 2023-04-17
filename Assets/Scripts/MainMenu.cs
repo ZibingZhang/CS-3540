@@ -14,8 +14,14 @@ public class MainMenu : MonoBehaviour
     public void ContinueGame()
     {
         int progress = PlayerPrefs.GetInt("CurrentProgress");
-        print(progress);
-        SceneManager.LoadScene(progress*2 + 1);
+        if (progress == 5)
+        {
+            SceneManager.LoadScene(1);
+        }
+        else 
+        {
+            SceneManager.LoadScene(progress*2 + 1);
+        }
     }
 
     public void ExitGame()
