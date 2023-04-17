@@ -91,7 +91,7 @@ public class InstructorScript : MonoBehaviour
                     if (Input.GetKeyDown(KeyCode.Mouse0))
                     {
                         step++;
-                        text = "You can pause the game by pressing the 'esc' key. You can press 'esc' or 'Resume' to return back to the game. Try it now.";
+                        text = "You can pause the game by pressing the 'esc' key. You can press 'esc' or click 'Resume' to return back to the game. Try it now.";
 
                         NextSentence();
                     }

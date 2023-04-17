@@ -33,10 +33,13 @@ public class TutorialNinjaAI : MonoBehaviour
     // for tutorial only set to false
     public bool shouldAttack = false;
 
+    private Health health;
+
 
     // Start is called before the first frame update
     void Start()
     {
+
         player = GameObject.FindGameObjectWithTag("Player");
         projectileParent = GameObject.FindGameObjectWithTag("ProjectileParent").transform;
         wanderPoints = GameObject.FindGameObjectsWithTag("WanderPoint");
@@ -46,11 +49,23 @@ public class TutorialNinjaAI : MonoBehaviour
         animator = GetComponent<Animator>();
 
         ChooseNextDestination();
+
+        health = gameObject.GetComponent<Health>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (health.currentHealth <= 0)
+        {
+            // should not move when dead
+            if (currentState != FSMState.Dead)
+            {
+                navMeshAgent.SetDestination(gameObject.transform.position);
+            }
+            currentState = FSMState.Dead;
+        }
+
         switch (currentState)
         {
             case FSMState.Idle:
@@ -117,7 +132,6 @@ public class TutorialNinjaAI : MonoBehaviour
 
     private void UpdateDeadState()
     {
-
     }
 
     private void ChooseNextDestination()
@@ -150,7 +164,7 @@ public class TutorialNinjaAI : MonoBehaviour
         }
         gameObject.transform.LookAt(player.transform);
 
-        Vector3 direction = (player.transform.position - transform.position).normalized + new Vector3(0, 0.5f, 0);
+        Vector3 direction = (player.transform.position - transform.position).normalized + new Vector3(0, 0.2f, 0);
         GameObject projectile = Instantiate(currentPrefab,
                 transform.position + direction, transform.rotation);
         Rigidbody rigidBody = projectile.GetComponent<Rigidbody>();
