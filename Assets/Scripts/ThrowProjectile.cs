@@ -128,6 +128,7 @@ public class ThrowProjectile : MonoBehaviour
 
     private void SwitchElement()
     {
+        print(currentElement);
         if (currentElement == Element.Water)
         {
             SetElementObjects(Element.Air);
@@ -136,13 +137,13 @@ public class ThrowProjectile : MonoBehaviour
         {
             SetElementObjects(Element.Fire);
         }
-        else if (currentElement == Element.Water)
-        {
-            SetElementObjects(Element.Air);
-        }
         else if (currentElement == Element.Air)
         {
             SetElementObjects(Element.Earth);
+        }
+        else if (currentElement == Element.Fire)
+        {
+            SetElementObjects(Element.Water);
         }
     }
 
