@@ -26,19 +26,19 @@ public class SkipStory : MonoBehaviour
     {
         switch (sceneIndex)
         {
-            case 0:
+            case 1:
                 SceneManager.LoadScene("Level1 (Forest)");
                 break;
-            case 1:
+            case 2:
                 SceneManager.LoadScene("Level2 (Volcano)");
                 break;
-            case 2:
+            case 3:
                 SceneManager.LoadScene("Level3 (Ice)");
                 break;
-            case 3:
+            case 4:
                 SceneManager.LoadScene("Level4 (Sky)");
                 break;
-            case 4:
+            case 5:
                 SceneManager.LoadScene("MainMenu");
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;

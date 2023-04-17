@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
+        PlayerPrefs.SetInt("CurrentProgress", 0);
         SceneManager.LoadScene(1);
     }
     public void ContinueGame()
