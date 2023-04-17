@@ -132,6 +132,7 @@ public class TutorialNinjaAI : MonoBehaviour
 
     private void UpdateDeadState()
     {
+        animator.SetInteger("animState", 3);
     }
 
     private void ChooseNextDestination()
