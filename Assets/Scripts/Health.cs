@@ -36,7 +36,7 @@ public class Health : MonoBehaviour
             currentHealth -= damageAmount;
             healthSlider.value = Mathf.Clamp(currentHealth*100/startingHealth, 0, 100);
             //healthSlider.value = currentHealth;
-            healthText.text = currentHealth + " / " + startingHealth;
+            healthText.text = Mathf.Clamp(currentHealth, 0, 100) + " / " + startingHealth;
         }
         if (currentHealth <= 0)
         {
