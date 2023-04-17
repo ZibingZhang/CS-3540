@@ -20,8 +20,8 @@ public class ProjectileEffect : MonoBehaviour
     public int waterTimeSpecial = 4;
     public GameObject frostImage = null;
 
-    public int airKnockback = 100;
-    public int airKnockbackSpecial = 200;
+    public int airKnockback = 10;
+    public int airKnockbackSpecial = 10;
 
     void Start()
     {
@@ -125,22 +125,6 @@ public class ProjectileEffect : MonoBehaviour
 
             gameObject.GetComponent<NinjaAI>().enabled = true;
         }
-
-        /*
-        if (elapsedTime > 2.0f)
-        {
-            print(elapsedTime);
-            print("In enable");
-            gameObject.GetComponent<CharacterController>().enabled = true;
-        }
-        */
-        /*
-        if (rb.velocity.magnitude < Vector3.one.magnitude)
-        {
-            gameObject.GetComponent<CharacterController>().enabled = true;
-        }
-        */
-
     }
 
     IEnumerator DamageOverTime(int time, int damage)

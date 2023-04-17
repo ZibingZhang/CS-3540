@@ -11,9 +11,21 @@ public class ProgressMenu : MonoBehaviour
     public GameObject water;
     public GameObject air;
 
-    void start()
-    {
+    GameObject[] elementList;
+    int progress;
 
+    void Start()
+    {
+        elementList = new GameObject[4] { earth, fire, water, air };
+        progress = PlayerPrefs.GetInt("CurrentProgress");
+        for (int i = 0; i < 4; i++)
+        {
+            if(i < progress)
+            {
+                GameObject temp = elementList[i];
+                temp.SetActive(true);
+            }
+        }
     }
 
     public void EarthLevel()
@@ -36,19 +48,4 @@ public class ProgressMenu : MonoBehaviour
         SceneManager.LoadScene("Level4 (Sky)");
     }
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        earth.SetActive(LevelManager.earth);
-        fire.SetActive(LevelManager.fire);
-        water.SetActive(LevelManager.water);
-        air.SetActive(LevelManager.air);
-    }
 }

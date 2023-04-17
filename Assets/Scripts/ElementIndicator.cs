@@ -12,12 +12,13 @@ public class ElementIndicator : MonoBehaviour
         Fire,
         Water
     }
-    public Element currentElement;
     public Image fireImage;
     public Image waterImage;
     public Image airImage;
     public Image earthImage;
 
+    Element currentElement;
+    Image[] elementImages;
     Image previousImage;
     Image highlightedImage;
     Color pastColor;
@@ -26,12 +27,28 @@ public class ElementIndicator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentElement = Element.Air;
+        elementImages = new Image[4] { airImage, earthImage, fireImage, waterImage};
         //currentElement = ThrowProjectile.currentElement;
         previousImage = airImage;
         SetElementTransparency(fireImage);
         SetElementTransparency(waterImage);
         SetElementTransparency(earthImage);
         SetElementTransparency(airImage);
+
+        SetInactiveElements();
+    }
+    public void SetInactiveElements()
+    {
+        int index = PlayerPrefs.GetInt("CurrentProgress");
+        for (int i = 0; i < 4; i++)
+        {
+            if (i >= index)
+            {
+                Image tempImage = elementImages[i];
+                tempImage.color = Color.clear;
+            }
+        }
     }
 
     // Update is called once per frame

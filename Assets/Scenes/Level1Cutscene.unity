@@ -322,6 +322,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6008577630093269424, guid: 3011e8639bf0b4d29ae14b21084ba12c, type: 3}
+      propertyPath: progressIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6008577630093269424, guid: 3011e8639bf0b4d29ae14b21084ba12c, type: 3}
       propertyPath: announcementDisplay
       value: 
       objectReference: {fileID: 1906267486}
@@ -652,6 +656,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7882310983747293545, guid: 8a1f94409976e4e679bdba47801649dc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8069779144407371382, guid: 8a1f94409976e4e679bdba47801649dc, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}

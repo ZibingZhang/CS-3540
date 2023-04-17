@@ -37,7 +37,9 @@ public class ThrowProjectile : MonoBehaviour
     [SerializeField] private float projectileSpeed = 100;
     [SerializeField] private float specialSpeed = 100;
 
-    private Transform projectileParent;
+    private List<Element> elementList = new List<Element>();
+    private List<Element> referenceList = new List<Element> {Element.Air, Element.Earth, Element.Fire, Element.Water};
+    private int elementIndex = 0;
 
     private GameObject currentProjectile;
     private GameObject currentSpecial;
@@ -48,15 +50,14 @@ public class ThrowProjectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        projectileParent = GameObject.FindGameObjectWithTag("ProjectileParent").transform;
-
         elapsedTimeAttack = (float)attackRefreshRate;
         elapsedTimeSpecial = (float)specialRefreshRate;
 
         attackCharge.fillAmount = 0;
         specialCharge.fillAmount = 0;
 
-        SetElementObjects(currentElement);
+        SetElementObjects(Element.Air);
+        GetElementsList();
     }
 
     // Update is called once per frame
@@ -87,9 +88,33 @@ public class ThrowProjectile : MonoBehaviour
         }
 
     }
+    void GetElementsList()
+    {
+        int index = PlayerPrefs.GetInt("CurrentProgress");
+        for (int i = 0; i < 4; i++)
+        {
+            if (i < index)
+            {
+                elementList.Add(referenceList[i]);
+            }
+        }
+    }
+    /*public void UpdateProgress()
+    {
+        print("UPDATEIINNNGG");
+        print(PlayerPrefs.GetInt("CurrentProgress"));
+        int temp = 0;
+        foreach (var e in referenceList)
+        {
+            if (temp < PlayerPrefs.GetInt("CurrentProgress"))
+            {
+                elementList.Add(e);
+                temp++;
+            }
+        }
+    }*/
     void SetElementObjects(Element element)
     {
-        currentElement = element;
         switch (element)
         {
             case Element.Water:
@@ -128,22 +153,9 @@ public class ThrowProjectile : MonoBehaviour
 
     private void SwitchElement()
     {
-        if (currentElement == Element.Water)
-        {
-            SetElementObjects(Element.Air);
-        }
-        else if (currentElement == Element.Earth)
-        {
-            SetElementObjects(Element.Fire);
-        }
-        else if (currentElement == Element.Water)
-        {
-            SetElementObjects(Element.Air);
-        }
-        else if (currentElement == Element.Air)
-        {
-            SetElementObjects(Element.Earth);
-        }
+        elementIndex++;
+        currentElement = elementList[elementIndex%elementList.Count];
+        SetElementObjects(currentElement);
     }
 
     private void UpdateRefreshUI() 

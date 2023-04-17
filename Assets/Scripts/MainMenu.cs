@@ -12,7 +12,8 @@ public class MainMenu : MonoBehaviour
     }
     public void ContinueGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        int progress = PlayerPrefs.GetInt("CurrentProgress");
+        SceneManager.LoadScene(progress*2 + 1);
     }
 
     public void ExitGame()

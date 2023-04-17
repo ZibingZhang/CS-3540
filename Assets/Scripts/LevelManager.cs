@@ -11,10 +11,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Text announcementDisplay;
     //[SerializeField] private AudioClip winSFX;
     //[SerializeField] private AudioClip loseSFX;
-    public static bool earth = false;
-    public static bool fire = false;
-    public static bool water = false;
-    public static bool air = false;
+    public int progressIndex = 0;
 
     private int enemyCount;
 
@@ -23,6 +20,7 @@ public class LevelManager : MonoBehaviour
         levelPaused = false;
         enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
         Debug.Log("Enemy count for level " + name + ": " + enemyCount);
+        PlayerPrefs.SetInt("CurrentProgress", progressIndex);
     }
 
     public void EnemyDied()
@@ -39,7 +37,9 @@ public class LevelManager : MonoBehaviour
         levelPaused = true;
         UpdateAnnouncement("you won :)");
         //AudioSource.PlayClipAtPoint(winSFX, Camera.main.transform.position);
-        Invoke("NextLevel", 5);
+  /*      PlayerPrefs.SetInt("CurrentProgress", progress + 1);
+        Camera.main.GetComponent<ThrowProjectile>().UpdateProgress();*/
+        Invoke("NextLevel", 3);
     }
 
     public void LevelLost()
@@ -81,7 +81,7 @@ public class LevelManager : MonoBehaviour
     public void NextLevel()
     {
         string currentSceneName = SceneManager.GetActiveScene().name;
-        Debug.Log("Next level, current scene name: " + currentSceneName);
+        //Debug.Log("Next level, current scene name: " + currentSceneName);
         switch (currentSceneName)
         {
             case "Level0 (Tutorial)":
@@ -91,35 +91,24 @@ public class LevelManager : MonoBehaviour
                 SceneManager.LoadScene("Level1 (Forest)");
                 break;
             case "Level1 (Forest)":
-                earth = true;
-                PlayerPrefs.SetString("CurrentProgress", "Earth");
                 SceneManager.LoadScene("Level2Cutscene");
                 break;
             case "Level2Cutscene":
                 SceneManager.LoadScene("Level2 (Volcano)");
                 break;
             case "Level2 (Volcano)":
-                fire = true;
-                PlayerPrefs.SetString("CurrentProgress", "Fire");
-
                 SceneManager.LoadScene("Level3Cutscene");
                 break;
             case "Level3Cutscene":
                 SceneManager.LoadScene("Level3 (Ice)");
                 break;
             case "Level3 (Ice)":
-                water = true;
-                PlayerPrefs.SetString("CurrentProgress", "Water");
-
                 SceneManager.LoadScene("Level4Cutscene");
                 break;
             case "Level4Cutscene":
                 SceneManager.LoadScene("Level4 (Sky)");
                 break;
             case "Level4 (Sky)":
-                air = true;
-                PlayerPrefs.SetString("CurrentProgress", "Air");
-
                 SceneManager.LoadScene("FinalCutscene");
                 break;
             case "FinalCutscene":
