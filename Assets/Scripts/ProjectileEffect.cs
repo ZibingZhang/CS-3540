@@ -20,7 +20,7 @@ public class ProjectileEffect : MonoBehaviour
     public int waterTimeSpecial = 4;
     public GameObject frostImage = null;
 
-    public int airKnockback = 10;
+    public int airKnockback = 5;
     public int airKnockbackSpecial = 10;
 
     void Start()
@@ -42,7 +42,7 @@ public class ProjectileEffect : MonoBehaviour
         {
             if(name.Contains("Earth"))
             {
-                StartCoroutine(KnockBack(projectile, earthKnockbackSpecial, back));
+                StartCoroutine(KnockBack(earthKnockbackSpecial, back));
             }
             else if (name.Contains("Fire"))
             {
@@ -50,19 +50,19 @@ public class ProjectileEffect : MonoBehaviour
             }
             else if (name.Contains("Water") || name.Contains("Snow"))
             {
-                StartCoroutine(Freeze(projectile, waterTimeSpecial));
+                StartCoroutine(Freeze(waterTimeSpecial));
             }
             //air
             else
             {
-                StartCoroutine(KnockBack(projectile, airKnockbackSpecial, Vector3.up));
+                StartCoroutine(Spin());
             }   
         }
         else
         {
             if (name.Contains("Earth"))
             {
-                StartCoroutine(KnockBack(projectile, earthKnockback, back));
+                StartCoroutine(KnockBack(earthKnockback, back));
             }
             else if (name.Contains("Fire"))
             {
@@ -70,18 +70,39 @@ public class ProjectileEffect : MonoBehaviour
             }
             else if (name.Contains("Water") || name.Contains("Snow"))
             {
-                StartCoroutine(Freeze(projectile, waterTime));
+                StartCoroutine(Freeze(waterTime));
             }
             else
             {
-                StartCoroutine(KnockBack(projectile, airKnockback, Vector3.up));
+                StartCoroutine(Spin());
             }
         }
     }
 
+    IEnumerator Spin()
+    {
+        Transform t = gameObject.transform;
+        if (gameObject.CompareTag("Player"))
+        {
+            gameObject.GetComponent<CharacterController>().enabled = false;
+            t.rotation = Quaternion.Euler(new Vector3(t.rotation.x, Random.Range(90, 270), t.rotation.z));
+            yield return new WaitForSeconds(1);
+            gameObject.GetComponent<CharacterController>().enabled = true;
+        }
+        /*
+        else
+        {
+            gameObject.GetComponent<NinjaAI>().enabled = false;
+            t.rotation = Quaternion.Euler(new Vector3(t.rotation.x, t.rotation.y, t.rotation.z));
+            yield return new WaitForSeconds(1);
+            gameObject.GetComponent<NinjaAI>().enabled = true;
+        }
+        */
+    }
+
    
 
-    IEnumerator Freeze(Collider projectile, int duration)
+    IEnumerator Freeze(int duration)
     {
         if (gameObject.CompareTag("Player"))
         {
@@ -99,7 +120,7 @@ public class ProjectileEffect : MonoBehaviour
         }
     }
 
-    IEnumerator KnockBack(Collider projectile, int amt, Vector3 direction)
+    IEnumerator KnockBack(int amt, Vector3 direction)
     {
         Rigidbody rb = gameObject.GetComponent<Rigidbody>();
         //Vector3 direction = projectile.transform.position.normalized;
