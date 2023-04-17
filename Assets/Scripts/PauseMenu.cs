@@ -53,6 +53,13 @@ public class PauseMenu : MonoBehaviour
         isGamePaused = false;
         LevelManager.levelPaused = false;
     }
+    public void SkipTutorial()
+    {
+        SceneManager.LoadScene(2);
+        Time.timeScale = 1f;
+        isGamePaused = false;
+        LevelManager.levelPaused = false;
+    }
 
     public void ExitGame()
     {

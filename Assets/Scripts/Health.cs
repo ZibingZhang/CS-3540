@@ -18,7 +18,7 @@ public class Health : MonoBehaviour
     void Start()
     {
         currentHealth = startingHealth;
-        healthSlider.value = currentHealth;
+        healthSlider.value = currentHealth*100/startingHealth;
         healthText.text = currentHealth + " / " + startingHealth;
 
         levelManager = FindObjectOfType<LevelManager>();
@@ -34,9 +34,9 @@ public class Health : MonoBehaviour
         if (currentHealth > 0 && !LevelManager.levelPaused)
         {
             currentHealth -= damageAmount;
-            healthSlider.value = Mathf.Clamp(currentHealth, 0, 100);
+            healthSlider.value = Mathf.Clamp(currentHealth*100/startingHealth, 0, 100);
             //healthSlider.value = currentHealth;
-            healthText.text = healthSlider.value + " / " + startingHealth;
+            healthText.text = currentHealth + " / " + startingHealth;
         }
         if (currentHealth <= 0)
         {
@@ -70,7 +70,7 @@ public class Health : MonoBehaviour
         if (currentHealth < 100)
         {
             currentHealth = Mathf.Clamp(currentHealth + amount, 0, 100);
-            healthSlider.value = Mathf.Clamp(currentHealth, 0, 100);
+            healthSlider.value = Mathf.Clamp(currentHealth*100/startingHealth, 0, 100);
             healthText.text = currentHealth + " / " + startingHealth;
         }
     }

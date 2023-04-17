@@ -144,39 +144,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a103fb9ff9e2488e9d2f3da5f85fc7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &207714116
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 207714113}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4be4188b4e7f497fa3f60caa4d4b5dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  storyText: {fileID: 2091628959}
-  continueText: {fileID: 194225205}
-  typingSpeed: 0.03
-  levelManager: {fileID: 207714114}
---- !u!114 &207714117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 207714113}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82bedd9f6182f46e483ac80f70a5ded0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  storyText: {fileID: 2091628959}
-  continueText: {fileID: 194225205}
-  pickup: {fileID: 0}
-  typingSpeed: 0.03
-  levelManager: {fileID: 207714114}
 --- !u!114 &207714118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,6 +161,19 @@ MonoBehaviour:
   pickup: {fileID: 1741849278}
   typingSpeed: 0.03
   levelManager: {fileID: 207714114}
+--- !u!114 &207714119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207714113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 796c47a5d1ba5e24e8a3bdf76792f596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneIndex: 3
 --- !u!1 &956204400
 GameObject:
   m_ObjectHideFlags: 0
@@ -747,9 +727,49 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5260322981197552830, guid: 8a1f94409976e4e679bdba47801649dc, type: 3}
+      propertyPath: m_text
+      value: Press SPACE to continue or ESC to skip.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260322981197552830, guid: 8a1f94409976e4e679bdba47801649dc, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.3301887
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260322981197552830, guid: 8a1f94409976e4e679bdba47801649dc, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.030017124
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260322981197552830, guid: 8a1f94409976e4e679bdba47801649dc, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5260322981197552830, guid: 8a1f94409976e4e679bdba47801649dc, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4283697152
+      objectReference: {fileID: 0}
     - target: {fileID: 5456892898815611854, guid: 8a1f94409976e4e679bdba47801649dc, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6142122261251356616, guid: 8a1f94409976e4e679bdba47801649dc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -436
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595785413856471081, guid: 8a1f94409976e4e679bdba47801649dc, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.3490566
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595785413856471081, guid: 8a1f94409976e4e679bdba47801649dc, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.13658725
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595785413856471081, guid: 8a1f94409976e4e679bdba47801649dc, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595785413856471081, guid: 8a1f94409976e4e679bdba47801649dc, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4284031744
       objectReference: {fileID: 0}
     - target: {fileID: 7882310983747293545, guid: 8a1f94409976e4e679bdba47801649dc, type: 3}
       propertyPath: m_IsActive
